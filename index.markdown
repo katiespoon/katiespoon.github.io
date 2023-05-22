@@ -17,12 +17,12 @@ After graduation I worked full-time at IBM Research on accelerating large deep l
 ## Upcoming
 MAY 2023 &#8729; Giving a talk at the <a href="https://www.atlconf.org/">Atlanta Conference on Science and Innovation Policy</a>
 
-JUL 2023 &#8729; Giving a talk and presenting a poster at the <a href="https://www.ic2s2.org/>International Conference on Computational Social Science</a> 
+JUL 2023 &#8729; Giving a talk and presenting a poster at the <a href="https://www.ic2s2.org/">International Conference on Computational Social Science</a> 
 
 ## News
 MAY 2023 &#8729; New preprint: <a href="https://osf.io/preprints/socarxiv/u26ze">Gender and retention patterns among U.S. faculty</a>
 
-JUL 2022 &#8729; Gave a talk and presented a poster at the <a href="https://www.ic2s2.org/>International Conference on Computational Social Science</a>
+JUL 2022 &#8729; Gave a talk and presented a poster at the <a href="https://www.ic2s2.org/">International Conference on Computational Social Science</a>
 
 JUL 2022 &#8729; Gave a talk at the <a href="https://sites.google.com/view/winsnetsci-diversify-netsci-20">Women in Network Science and Diversify NetSci Satellite</a>
 
@@ -30,4 +30,4 @@ JUN 2022 &#8729; I enjoyed participating in the <a href="https://sicss.io/">Summ
 
 JUN 2022 &#8729; Gave a talk and presented a poster at the <a href="https://www.icssi.org/">International Conference on Science of Science and Innovation</a>
 
-MAY 2022 &#8729; I passed my prelims!
+MAY 2022 &#8729; I passed my prelims and finished year 2!
