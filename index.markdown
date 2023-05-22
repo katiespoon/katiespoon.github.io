@@ -6,7 +6,7 @@ layout: default #home
 ---
 
 ## About Me
-I am a 2nd-year PhD student in Computer Science at the University of Colorado, Boulder, co-advised by <a href="https://aaronclauset.github.io/">Aaron Clauset</a> and <a href="https://larremorelab.github.io/">Dan Larremore</a>. I am also getting a Master's in <a href="https://www.colorado.edu/education/academics/graduate-programs/educational-foundations-policy-practice/ma-educational-foundations">Educational Foundations, Policy and Practice</a>, advised by <a href="https://www.colorado.edu/education/kevin-welner">Kevin Welner</a>.
+I am a 3rd-year PhD student in Computer Science at the University of Colorado, Boulder, co-advised by <a href="https://aaronclauset.github.io/">Aaron Clauset</a> and <a href="https://larremorelab.github.io/">Dan Larremore</a>. I am also getting a Master's in <a href="https://www.colorado.edu/education/academics/graduate-programs/educational-foundations-policy-practice/ma-educational-foundations">Educational Foundations, Policy and Practice</a>, advised by <a href="https://www.colorado.edu/education/kevin-welner">Kevin Welner</a>.
 
 Currently I am working on a project trying to understand why women academics leave their jobs at higher rates than men. I am broadly interested in studying inequality in social systems. 
 
