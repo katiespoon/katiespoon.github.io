@@ -15,7 +15,7 @@ Previously, I did my BS/MS in Computer Science at Indiana University, where my s
 After graduation I worked full-time at IBM Research on accelerating large deep learning models, specifically for natural language processing. These past experiences caused me to hesitate at the speed in which deep neural networks are deployed and the amount of trust people have in their fairness and accuracy. This is especially concerning when those networks are used in healthcare, policing, education, and other areas that have a direct impact on people’s lives. I decided to pivot to computational social science to focus on more explainable methods.
 
 ### Upcoming
-MAY 2023 &#8729; Giving a talk at the <a href="https://www.atlconf.org/">Atlanta Conference on Science and Innovation Policy</a>
+MAY 2023 &#8729; Giving a talk at the <a href="https://www.atlconf.org/">Atlanta Conference on Science and Innovation Policy</a> [<a href="https://katiespoon.github.io/ATLC23.pdf">slides</a>]
 
 JUL 2023 &#8729; Giving a talk and presenting a poster at the <a href="https://www.ic2s2.org/">International Conference on Computational Social Science</a> 
 
