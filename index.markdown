@@ -10,7 +10,7 @@ I am a computational social scientist and a 4th-year PhD student in Computer Sci
 
 I'm interested in identifying and describing inequalities in social systems, and designing, implementing, and evaluating interventions to reduce those inequalities. My research is broadly focused on quantifying barriers to and retention within the scientific and technical workforce for historically excluded populations. I enjoy using a diverse range of data science and social science methods to conduct large-scale, interdisciplinary administrative, survey, network, and text analyses, which often reveal patterns not visible at a smaller scale. 
 
-Prior to grad school, I worked as a research engineer at IBM Research, and studied computer science at Indiana University, where I developed an an early-warning system to detect dyslexia in children's handwriting.
+Prior to grad school, I worked as a research engineer at IBM Research, and studied computer science at Indiana University, where I developed an early-warning system to detect dyslexia in children's handwriting.
 
 ### News
 JUL 2023 &#8729; Gave a talk and presented a poster at the <a href="https://www.ic2s2.org/">International Conference on Computational Social Science</a>
