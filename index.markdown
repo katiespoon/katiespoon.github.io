@@ -13,6 +13,8 @@ I'm interested in identifying and describing inequalities in social systems, and
 Prior to grad school, I worked as a research engineer at IBM Research, and studied computer science at Indiana University, where I developed an early-warning system to detect dyslexia in children's handwriting.
 
 ### News
+OCT 2023 &#8729; <a href="https://www.science.org/doi/10.1126/sciadv.adi2205">New paper</a> in <i>Science Advances</i>! Covered by <a href="https://www.chronicle.com/article/even-with-tenure-women-are-more-likely-to-leave-higher-ed">The Chronicle of Higher Education</a>, <a href="https://www.timeshighereducation.com/news/hostile-workplace-climate-pushing-women-out-academia">Times Higher Education</a>, <a href="https://www.science.org/content/article/women-faculty-feel-pushed-academia-poor-workplace-climate">Science Careers</a> and <a href="https://www.nature.com/articles/d41586-023-03251-8">Nature News</a>.
+
 JUL 2023 &#8729; Gave a talk and presented a poster at the <a href="https://www.ic2s2.org/">International Conference on Computational Social Science</a>
 
 MAY 2023 &#8729; New preprint: <a href="https://osf.io/preprints/socarxiv/u26ze">Gender and retention patterns among U.S. faculty</a>. Gave a talk at the <a href="https://www.atlconf.org/">Atlanta Conference on Science and Innovation Policy</a> [<a href="https://katiespoon.github.io/ATLC23.pdf">slides</a>]
