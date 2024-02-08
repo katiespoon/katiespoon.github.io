@@ -8,14 +8,22 @@ layout: default #home
 ### About Me
 I am a computational social scientist and a 4th-year PhD candidate in computer science at the University of Colorado, Boulder, where I am fortunate to be supported by an <a href="https://nsfgrfp.org/">NSF Graduate Research Fellowship</a>, and I am co-advised by <a href="https://aaronclauset.github.io/">Aaron Clauset</a> and <a href="https://larremorelab.github.io/">Dan Larremore</a>. I am also getting a Master's in <a href="https://www.colorado.edu/education/academics/graduate-programs/educational-foundations-policy-practice/ma-educational-foundations">Education Policy</a>, advised by <a href="https://www.colorado.edu/education/kevin-welner">Kevin Welner</a>.
 
-I'm interested in identifying and describing inequalities in social systems, and designing, implementing, and evaluating interventions to reduce those inequalities. My research is broadly focused on quantifying barriers to and retention within the scientific and technical workforce for historically excluded populations. I enjoy using a diverse range of data science and social science methods to conduct large-scale, interdisciplinary administrative, survey, network, and text analyses, which often reveal patterns not visible at a smaller scale. 
+I’m interested in identifying and describing inequalities in social systems such as in health, education and careers, and informing policy decisions that address those inequalities. My PhD research is broadly focused on quantifying barriers to and retention within the scientific and technical workforce for historically excluded populations. I enjoy using a diverse range of data science and social science methods to conduct large-scale, interdisciplinary administrative, survey, network, and text analyses, which often reveal patterns not visible at a smaller scale.
 
 Prior to grad school, I worked as a research engineer at IBM Research, and studied computer science at Indiana University, where I developed an early-warning system to detect dyslexia in children's handwriting.
 
 ### News
+FEB 2024 &#8729; Gave a talk [<a href="https://katiespoon.github.io/AARC_Feb2024.pdf">slides</a>]at the Academic Analytics Research Center
+
+JAN 2024 &#8729; Accepted an internship offer at the <a href="https://www.census.gov/programs-surveys/ehealth.html">U.S. Census Bureau</a> this summer!
+
+DEC 2023 &#8729; Presented my work to CU Office of Faculty Affairs to help them improve their faculty retention efforts
+
 NOV 2023 &#8729; Passed my dissertation proposal defense and I am officially a PhD candidate! :tada:
 
 OCT 2023 &#8729; <a href="https://www.science.org/doi/10.1126/sciadv.adi2205">New paper</a> in <i>Science Advances</i>! Covered by <a href="https://www.chronicle.com/article/even-with-tenure-women-are-more-likely-to-leave-higher-ed">The Chronicle of Higher Education</a>, <a href="https://www.timeshighereducation.com/news/hostile-workplace-climate-pushing-women-out-academia">Times Higher Education</a>, <a href="https://www.science.org/content/article/women-faculty-feel-pushed-academia-poor-workplace-climate">Science Careers</a> and <a href="https://www.nature.com/articles/d41586-023-03251-8">Nature News</a>.
+
+OCT 2023 &#8729; New preprint: <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4618699">Book bans in political context: Evidence from U.S. schools</a>. Such a fun collaboration started at a summer school!
 
 JUL 2023 &#8729; Gave a talk [<a href="https://katiespoon.github.io/IC2S2_23.pdf">slides</a>] and presented a poster at the <a href="https://www.ic2s2.org/">International Conference on Computational Social Science</a>
 
