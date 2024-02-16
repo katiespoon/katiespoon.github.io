@@ -13,9 +13,11 @@ I’m interested in identifying and describing inequalities in social systems su
 Prior to grad school, I worked as a research engineer at IBM Research, and studied computer science at Indiana University, where I developed an early-warning system to detect dyslexia in children's handwriting.
 
 ### News
-FEB 2024 &#8729; Gave a talk [<a href="https://katiespoon.github.io/AARC_Feb2024.pdf">slides</a>]at the Academic Analytics Research Center
+FEB 2024 &#8729; New preprint: <a href="https://osf.io/preprints/socarxiv/g6xwk">Gendered devaluation underlies faculty retention</a>
 
-JAN 2024 &#8729; Accepted an internship offer at the <a href="https://www.census.gov/programs-surveys/ehealth.html">U.S. Census Bureau</a> this summer!
+FEB 2024 &#8729; Gave a talk [<a href="https://katiespoon.github.io/AARC_Feb2024.pdf">slides</a>] at the Academic Analytics Research Center
+
+JAN 2024 &#8729; I will be a data science fellow at the <a href="https://www.census.gov/programs-surveys/ehealth.html">U.S. Census Bureau</a> this summer!
 
 DEC 2023 &#8729; Presented my work to CU Office of Faculty Affairs to help them improve their faculty retention efforts
 
