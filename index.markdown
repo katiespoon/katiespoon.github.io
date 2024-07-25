@@ -12,21 +12,21 @@ I’m interested in identifying and describing inequalities in social systems su
 
 Prior to grad school, I worked as a research engineer at IBM Research, and studied computer science at Indiana University, where I developed an early-warning system to detect dyslexia in children's handwriting.
 
-### Upcoming (Fall)
-Giving an invited talk at the University of Colorado Boulder Academic Leadership Conference and 2 contributed talks at the Association for the Study of Higher Education. 
+### Upcoming
+<b>Fall</b>: Giving an invited talk at the University of Colorado Boulder Academic Leadership Conference and 2 contributed talks at the Association for the Study of Higher Education. 
 
 ### News
+I am a data science fellow at the <a href="https://www.census.gov/programs-surveys/ehealth.html">U.S. Census Bureau</a> this summer!
+
 JUL 2024 &#8729; Gave two talks at the International Conference on the Science of Science & Innovation
 
-JUN 2024 &#8729; <a href=https://academic.oup.com/pnasnexus/article/3/6/pgae197/7689238?login=false>New paper</a> in <i>PNAS Nexus</i>!
+JUN 2024 &#8729; <a href="https://academic.oup.com/pnasnexus/article/3/6/pgae197/7689238?login=false">New paper</a> in <i>PNAS Nexus</i>!
 
 MAY 2024 &#8729; Honored to have recieved an Achievement Reward for College Scientists and an Annual Outstanding Paper Award from CU Boulder.
 
 FEB 2024 &#8729; New preprint: <a href="https://osf.io/preprints/socarxiv/g6xwk">Gendered devaluation underlies faculty retention</a>
 
 FEB 2024 &#8729; Gave a talk [<a href="https://katiespoon.github.io/AARC_Feb2024.pdf">slides</a>] at the Academic Analytics Research Center
-
-JAN 2024 &#8729; I will be a data science fellow at the <a href="https://www.census.gov/programs-surveys/ehealth.html">U.S. Census Bureau</a> this summer!
 
 DEC 2023 &#8729; Presented my work to CU Office of Faculty Affairs to help them improve their faculty retention efforts
 
