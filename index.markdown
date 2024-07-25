@@ -24,6 +24,8 @@ JUN 2024 &#8729; <a href="https://academic.oup.com/pnasnexus/article/3/6/pgae197
 
 MAY 2024 &#8729; Honored to have recieved an Achievement Reward for College Scientists and an Annual Outstanding Paper Award from CU Boulder.
 
+MAR 2024 &#8729; I enjoyed participaing in the Atlanta Academy on Science and Innovation Policy!
+
 FEB 2024 &#8729; New preprint: <a href="https://osf.io/preprints/socarxiv/g6xwk">Gendered devaluation underlies faculty retention</a>
 
 FEB 2024 &#8729; Gave a talk [<a href="https://katiespoon.github.io/AARC_Feb2024.pdf">slides</a>] at the Academic Analytics Research Center
