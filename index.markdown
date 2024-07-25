@@ -6,13 +6,22 @@ layout: default #home
 ---
 
 ### About Me
-I am a computational social scientist and a 4th-year PhD candidate in computer science at the University of Colorado, Boulder, where I am fortunate to be supported by an <a href="https://nsfgrfp.org/">NSF Graduate Research Fellowship</a>, and I am co-advised by <a href="https://aaronclauset.github.io/">Aaron Clauset</a> and <a href="https://larremorelab.github.io/">Dan Larremore</a>. I am also getting a Master's in <a href="https://www.colorado.edu/education/academics/graduate-programs/educational-foundations-policy-practice/ma-educational-foundations">Education Policy</a>, advised by <a href="https://www.colorado.edu/education/kevin-welner">Kevin Welner</a>.
+I am a computational social scientist and a 5th-year PhD candidate in computer science at the University of Colorado, Boulder (graduating in June 2025), where I am fortunate to be supported by an <a href="https://nsfgrfp.org/">NSF Graduate Research Fellowship</a>, and I am co-advised by <a href="https://aaronclauset.github.io/">Aaron Clauset</a> and <a href="https://larremorelab.github.io/">Dan Larremore</a>. I am also getting a Master's in <a href="https://www.colorado.edu/education/academics/graduate-programs/educational-foundations-policy-practice/ma-educational-foundations">Education Policy</a>, advised by <a href="https://www.colorado.edu/education/kevin-welner">Kevin Welner</a>.
 
-I’m interested in identifying and describing inequalities in social systems such as in health, education and careers, and informing policy decisions that address those inequalities. My PhD research is broadly focused on quantifying barriers to and retention within the scientific and technical workforce for historically excluded populations. I enjoy using a diverse range of data science and social science methods to conduct large-scale, interdisciplinary administrative, survey, network, and text analyses, which often reveal patterns not visible at a smaller scale.
+I’m interested in identifying and describing inequalities in social systems such as in health, politics, education and careers, and informing policy decisions that address those inequalities. My PhD research is broadly focused on quantifying barriers to and retention within the scientific and technical workforce for historically excluded populations. I enjoy using a diverse range of data science and social science methods to conduct large-scale, interdisciplinary administrative, survey, network, and text analyses, which often reveal patterns not visible at a smaller scale.
 
 Prior to grad school, I worked as a research engineer at IBM Research, and studied computer science at Indiana University, where I developed an early-warning system to detect dyslexia in children's handwriting.
 
+### Upcoming (Fall)
+Giving an invited talk at the University of Colorado Boulder Academic Leadership Conference and 2 contributed talks at the Association for the Study of Higher Education. 
+
 ### News
+JUL 2024 &#8729; Gave two talks at the International Conference on the Science of Science & Innovation
+
+JUN 2024 &#8729; <a href=https://academic.oup.com/pnasnexus/article/3/6/pgae197/7689238?login=false>New paper</a> in <i>PNAS Nexus</i>!
+
+MAY 2024 &#8729; Honored to have recieved an Achievement Reward for College Scientists and an Annual Outstanding Paper Award from CU Boulder.
+
 FEB 2024 &#8729; New preprint: <a href="https://osf.io/preprints/socarxiv/g6xwk">Gendered devaluation underlies faculty retention</a>
 
 FEB 2024 &#8729; Gave a talk [<a href="https://katiespoon.github.io/AARC_Feb2024.pdf">slides</a>] at the Academic Analytics Research Center
