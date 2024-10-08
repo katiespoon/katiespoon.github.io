@@ -6,7 +6,7 @@ layout: default #home
 ---
 
 ### About Me
-I'm on the academic job market!
+I'm on the job market!
  
 I am a computational social scientist and a 5th-year PhD candidate in computer science at the University of Colorado, Boulder (graduating in June 2025), where I am fortunate to be supported by an <a href="https://nsfgrfp.org/">NSF Graduate Research Fellowship</a>, advised by <a href="https://aaronclauset.github.io/">Aaron Clauset</a> and <a href="https://larremorelab.github.io/">Dan Larremore</a>. I also just received a Master's in <a href="https://www.colorado.edu/education/academics/graduate-programs/educational-foundations-policy-practice/ma-educational-foundations">Education Policy</a>, advised by <a href="https://www.colorado.edu/education/kevin-welner">Kevin Welner</a>. I am currently a Data Science Fellow at the <a href="https://www.census.gov/programs-surveys/ehealth.html">U.S. Census Bureau</a>.
 
