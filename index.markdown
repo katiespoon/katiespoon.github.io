@@ -18,6 +18,8 @@ Prior to grad school, I worked as a research engineer at IBM Research, and studi
 <b>FALL</b>: Talks at the Rising Stars in Data Science Workshop and the Association for the Study of Higher Education. 
 
 ### News
+FALL 2024 &#8729; <a href="https://theconversation.com/most-us-book-bans-target-childrens-literature-featuring-diverse-characters-and-authors-of-color-238731">New op-ed</a> for <i>The Conversation</i>
+
 SUMMER 2024 &#8729; Talks at the International Conference on the Science of Science & Innovation and the University of Colorado Boulder Academic Leadership Conference. <a href="https://academic.oup.com/pnasnexus/article/3/6/pgae197/7689238?login=false">New paper</a> in <i>PNAS Nexus</i>!
 
 SPRING 2024 &#8729; Talks [<a href="https://katiespoon.github.io/AARC_Feb2024.pdf">slides</a>] at the Academic Analytics Research Center and CU Office of Faculty Affairs. Honored to have recieved an Achievement Reward for College Scientists and an Annual Outstanding Paper Award from CU Boulder. I enjoyed participaing in the Atlanta Academy on Science and Innovation Policy! New preprint: <a href="https://osf.io/preprints/socarxiv/g6xwk">Gendered devaluation underlies faculty retention</a>
