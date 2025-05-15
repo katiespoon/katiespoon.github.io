@@ -14,7 +14,7 @@ My research systematically investigates social inequalities in education, career
 
 Prior to grad school, I worked as a research engineer at IBM Research, and studied computer science at Indiana University, where I developed an early-warning system to detect dyslexia in children's handwriting.
 
-Talks [<a href="https://katiespoon.github.io/atlc_undergrad.pdf">slides</a>] at ATLC
+Talks [<a href="https://katiespoon.github.io/atlc_undergrad.pdf">slides</a>, <a href="https://katiespoon.github.io/atlc_grants.pdf">slides</a>] at ATLC
 
 ### News
 FALL 2024 &#8729; Honored to give talks at the Rising Stars in Data Science Workshop and the University of Colorado Academic Leadership Conference. <a href="https://theconversation.com/most-us-book-bans-target-childrens-literature-featuring-diverse-characters-and-authors-of-color-238731">New op-ed</a> for <i>The Conversation.</i> Started a collaboration with the National Center for Women & Technology.
