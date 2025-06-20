@@ -6,18 +6,20 @@ layout: default #home
 ---
 
 ### About Me
-I'm on the job market!
- 
-I am a computational social scientist and a 5th-year PhD candidate in computer science at the University of Colorado, Boulder (graduating in June 2025), where I am fortunate to be supported by an <a href="https://nsfgrfp.org/">NSF Graduate Research Fellowship</a>, advised by <a href="https://aaronclauset.github.io/">Aaron Clauset</a> and <a href="https://larremorelab.github.io/">Dan Larremore</a>. I also just received a Master's in <a href="https://www.colorado.edu/education/academics/graduate-programs/educational-foundations-policy-practice/ma-educational-foundations">Education Policy</a>, advised by <a href="https://www.colorado.edu/education/kevin-welner">Kevin Welner</a>. I am currently a Data Science Fellow at the <a href="https://www.census.gov/programs-surveys/ehealth.html">U.S. Census Bureau</a>.
+I am an incoming <a href="https://datascience.stanford.edu/programs/data-science-fellows">Data Science Fellow</a> and <a href="https://longevity.stanford.edu/new-map-of-life-fellows-program/">New Map of Life Postdoc Fellow</a> at Stanford, starting this fall. I received my PhD in computer science at the University of Colorado Boulder, supported by an <a href="https://nsfgrfp.org/">NSF Graduate Research Fellowship</a>, advised by <a href="https://aaronclauset.github.io/">Aaron Clauset</a> and <a href="https://larremorelab.github.io/">Dan Larremore</a>. I also received a Master's in <a href="https://www.colorado.edu/education/academics/graduate-programs/educational-foundations-policy-practice/ma-educational-foundations">Education Policy</a> during my PhD. I also spent time working as a Data Science Fellow at the <a href="https://www.census.gov/programs-surveys/ehealth.html">U.S. Census Bureau</a> and a Graduate Research Assistant in the National Center for Women & Technology.
 
 My research systematically investigates social inequalities in education, careers and health at scale to better inform policy decisions that address those inequalities. I enjoy using a diverse range of data science and social science methods to conduct large-scale, interdisciplinary administrative, survey, network, and text analyses, which often reveal patterns not visible at a smaller scale.
 
-Prior to grad school, I worked as a research engineer at IBM Research, and studied computer science at Indiana University, where I developed an early-warning system to detect dyslexia in children's handwriting.
+Prior to my PhD, I worked as a research engineer at IBM Research, and studied computer science at Indiana University, where I developed an early-warning system to detect dyslexia in children's handwriting.
 
-Talks [<a href="https://katiespoon.github.io/atlc_undergrad.pdf">slides</a>, <a href="https://katiespoon.github.io/atlc_grants.pdf">slides</a>] at ATLC
+After my postdoctoral fellowship, I will be starting as an Assistant Professor of Computer Science at the University of Texas-El Paso, the only nonselective R1 institution in the U.S.
 
 ### News
-FALL 2024 &#8729; Honored to give talks at the Rising Stars in Data Science Workshop and the University of Colorado Academic Leadership Conference. <a href="https://theconversation.com/most-us-book-bans-target-childrens-literature-featuring-diverse-characters-and-authors-of-color-238731">New op-ed</a> for <i>The Conversation.</i> Started a collaboration with the National Center for Women & Technology.
+SUMMER 2025 &#8729; Taking a break from work to hike the Colorado Trail! :evergreen_tree:🥾⛺
+
+SPRING 2025 &#8729; Finished my PhD! :tada: And gave talks [<a href="https://katiespoon.github.io/atlc_undergrad.pdf">slides</a>, <a href="https://katiespoon.github.io/atlc_grants.pdf">slides</a>] at the Atlanta Conference on Science and Innovation Policy.
+
+FALL 2024 &#8729; Honored to give talks at the Rising Stars in Data Science Workshop and the University of Colorado Academic Leadership Conference. <a href="https://theconversation.com/most-us-book-bans-target-childrens-literature-featuring-diverse-characters-and-authors-of-color-238731">New op-ed</a> for <i>The Conversation.</i> Started working with the National Center for Women & Technology.
 
 SUMMER 2024 &#8729; Started as a Data Science Fellow at the U.S. Census Bureau. Talks at the International Conference on the Science of Science & Innovation and the Coding it Forward Public Technology Showcase. <a href="https://academic.oup.com/pnasnexus/article/3/6/pgae197/7689238?login=false">New paper</a> in <i>PNAS Nexus</i>!
 
