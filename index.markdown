@@ -18,7 +18,7 @@ Prior to my PhD, I worked as a research engineer at IBM Research, and studied co
 <!--- After my postdoctoral fellowship, I will be starting as an Assistant Professor of Computer Science at the <a href="https://www.utep.edu/cs/about/">University of Texas-El Paso</a>, the only open-access R1 institution in the U.S. --->
 
 ### News
-FALL 2025 &#8729; I moved to California and started at Stanford! Gave talks for NCWIT and the SCL Futures Project Convening, served on a panel at the Rising Stars in Data Science Workshop, and attended the Complex Networks Winter Workshop in Quebec!🍁 
+FALL 2025 &#8729; I moved to California and started at Stanford! Gave talks for NCWIT and the SCL Futures Project Convening, served on a panel at the Rising Stars in Data Science Workshop, and attended the Complex Networks Winter Workshop in Quebec! 🍁 
 
 SUMMER 2025 &#8729; Taking a break from work to hike the Colorado Trail! 🌲🥾⛺
 
