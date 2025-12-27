@@ -6,20 +6,20 @@ layout: default #home
 ---
 
 ### About Me
-<b>In Fall 2025, I start as a <a href="https://datascience.stanford.edu/programs/data-science-fellows">Data Science Fellow</a> and <a href="https://longevity.stanford.edu/new-map-of-life-fellows-program/">New Map of Life Fellow</a> at Stanford, working with <a href="https://ed.stanford.edu/faculty/stevens4">Mitchell Stevens</a> and <a href="https://profiles.stanford.edu/david-rehkopf">David Rehkopf</a>.</b> 
+<b>I am a <a href="https://datascience.stanford.edu/programs/data-science-fellows">Data Science Fellow</a> and <a href="https://longevity.stanford.edu/new-map-of-life-fellows-program/">New Map of Life Fellow</a> at Stanford, working with <a href="https://ed.stanford.edu/faculty/stevens4">Mitchell Stevens</a> and <a href="https://profiles.stanford.edu/david-rehkopf">David Rehkopf</a>.</b> 
 
-I received my PhD in computer science at the University of Colorado Boulder, supported by an <a href="https://nsfgrfp.org/">NSF Graduate Research Fellowship</a>, advised by <a href="https://aaronclauset.github.io/">Aaron Clauset</a> and <a href="https://larremorelab.github.io/">Dan Larremore</a>. During my PhD, I also received a Master's in <a href="https://www.colorado.edu/education/academics/graduate-programs/educational-foundations-policy-practice/ma-educational-foundations">Education Policy</a>, and spent time working as a Data Science Fellow at the <a href="https://www.census.gov/programs-surveys/ehealth.html">U.S. Census Bureau</a> and a Graduate Research Assistant in the National Center for Women & Technology. 
+I received my PhD in computer science in 2025 at the University of Colorado Boulder, supported by an <a href="https://nsfgrfp.org/">NSF Graduate Research Fellowship</a>, advised by <a href="https://aaronclauset.github.io/">Aaron Clauset</a> and <a href="https://larremorelab.github.io/">Dan Larremore</a>. During my PhD, I also received a Master's in <a href="https://www.colorado.edu/education/academics/graduate-programs/educational-foundations-policy-practice/ma-educational-foundations">Education Policy</a>, and spent time working as a Data Science Fellow at the <a href="https://www.census.gov/programs-surveys/ehealth.html">U.S. Census Bureau</a> and a Graduate Research Assistant in the National Center for Women & Technology. 
 
-My research systematically investigates social inequalities in education, careers and health at scale to better inform policy decisions that address those inequalities. I enjoy using a diverse range of data science and social science methods to conduct large-scale, interdisciplinary administrative, survey, network, and text analyses, which often reveal patterns not visible at a smaller scale.
+<!---My research systematically investigates social inequalities in education, careers and health at scale to better inform policy decisions that address those inequalities. I enjoy using a diverse range of data science and social science methods to conduct large-scale, interdisciplinary administrative, survey, network, and text analyses, which often reveal patterns not visible at a smaller scale.
+Prior to my PhD, I worked as a research engineer at IBM Research, and studied computer science at Indiana University, where I developed an early-warning system to detect dyslexia in children's handwriting.--->
 
-Prior to my PhD, I worked as a research engineer at IBM Research, and studied computer science at Indiana University, where I developed an early-warning system to detect dyslexia in children's handwriting.
+<!---### Upcoming --->
 
-### Upcoming
-I will be attending the Complex Networks Winter Workshop!
-
-After my postdoctoral fellowship, I will be starting as an Assistant Professor of Computer Science at the <a href="https://www.utep.edu/cs/about/">University of Texas-El Paso</a>, the only open-access R1 institution in the U.S.
+<!--- After my postdoctoral fellowship, I will be starting as an Assistant Professor of Computer Science at the <a href="https://www.utep.edu/cs/about/">University of Texas-El Paso</a>, the only open-access R1 institution in the U.S. --->
 
 ### News
+FALL 2025 &#8729; I moved to California and started at Stanford! Gave talks for NCWIT and the SCL Futures Project Convening, served on a panel at the Rising Stars in Data Science Workshop, and attended the Complex Networks Winter Workshop in Quebec!🍁 
+
 SUMMER 2025 &#8729; Taking a break from work to hike the Colorado Trail! 🌲🥾⛺
 
 SPRING 2025 &#8729; Finished my PhD! 🎓  And gave talks [<a href="https://katiespoon.github.io/atlc_undergrad.pdf">slides</a>, <a href="https://katiespoon.github.io/atlc_grants.pdf">slides</a>] at the Atlanta Conference on Science and Innovation Policy.
