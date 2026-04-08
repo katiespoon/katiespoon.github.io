@@ -13,9 +13,8 @@ I received my PhD in computer science in 2025 at the University of Colorado Boul
 <!---My research systematically investigates social inequalities in education, careers and health at scale to better inform policy decisions that address those inequalities. I enjoy using a diverse range of data science and social science methods to conduct large-scale, interdisciplinary administrative, survey, network, and text analyses, which often reveal patterns not visible at a smaller scale.
 Prior to my PhD, I worked as a research engineer at IBM Research, and studied computer science at Indiana University, where I developed an early-warning system to detect dyslexia in children's handwriting.--->
 
-<!---### Upcoming --->
-
-<!--- After my postdoctoral fellowship, I will be starting as an Assistant Professor of Computer Science at the <a href="https://www.utep.edu/cs/about/">University of Texas-El Paso</a>, the only open-access R1 institution in the U.S. --->
+### Upcoming
+This summer, I will be giving talks at the Sociological Science conference (Palo Alto, CA), the Society for Longitudinal and Life Course Studies conference (Brussels), the IAGG World Congress of Gerontology and Geriatrics (Amsterdam), and the Data-Intensive Research Conference (Minneapolis, MN).   
 
 ### News
 FALL 2025 &#8729; I moved to California and started at Stanford! Gave talks for NCWIT and the SCL Futures Project Convening, served on a panel at the Rising Stars in Data Science Workshop, and attended the Complex Networks Winter Workshop in Quebec! 🍁 
