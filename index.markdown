@@ -14,7 +14,7 @@ I received my PhD in computer science in 2025 at the University of Colorado Boul
 Prior to my PhD, I worked as a research engineer at IBM Research, and studied computer science at Indiana University, where I developed an early-warning system to detect dyslexia in children's handwriting.--->
 
 ### Upcoming
-This summer, I will be giving talks at the Sociological Science conference (Palo Alto, CA), the Society for Longitudinal and Life Course Studies conference (Brussels), the IAGG World Congress of Gerontology and Geriatrics (Amsterdam), and the Data-Intensive Research Conference (Minneapolis, MN).   
+This summer, I will be giving talks at the Sociological Science conference (Palo Alto), the Society for Longitudinal and Life Course Studies conference (Brussels), the IAGG World Congress of Gerontology and Geriatrics (Amsterdam), and the Data-Intensive Research Conference (Minneapolis).   
 
 ### News
 FALL 2025 &#8729; I moved to California and started at Stanford! Gave talks for NCWIT and the SCL Futures Project Convening, served on a panel at the Rising Stars in Data Science Workshop, and attended the Complex Networks Winter Workshop in Quebec! 🍁 
