@@ -205,6 +205,8 @@ img{max-width:100%}
 .row3:first-child{border-top:none}
 .row3 .yr{font-family:var(--font-data);font-size:12.5px;color:var(--ink-faint)}
 .row3 .nm{font-size:15px;min-width:0}
+.row3 .nm a{color:var(--accent);text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 30%,transparent)}
+.row3 .nm a:hover{border-bottom-color:var(--accent)}
 .row3 .loc{font-size:13px;color:var(--ink-faint);white-space:nowrap}
 #service .row3{grid-template-columns:76px 1fr auto}
 .slides{font-family:var(--font-data);font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--accent);
@@ -386,7 +388,6 @@ img{max-width:100%}
   <nav class="band pagenav" role="tablist" aria-label="Sections">
     <button role="tab" id="tab-research" aria-selected="true" aria-controls="view-research" data-tab="research">Research</button>
     <button role="tab" id="tab-teaching" aria-selected="false" aria-controls="view-teaching" data-tab="teaching">Teaching &amp; Service</button>
-    <a class="cv" href="{{ "/cv/" | relative_url }}"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-cv"/></svg>CV</a>
   </nav>
 
   <div class="views">
@@ -634,6 +635,22 @@ img{max-width:100%}
     </section>
 
     <section class="band">
+      <div class="sec-head"><h2>Writing</h2><span class="aside">Essays and perspectives</span></div>
+      <div class="rows">
+        <div class="row3">
+          <span class="yr">2024</span>
+          <span class="nm"><a href="https://theconversation.com/most-us-book-bans-target-childrens-literature-featuring-diverse-characters-and-authors-of-color-238731" target="_blank" rel="noopener">Most US book bans target children&rsquo;s literature featuring diverse characters and authors of color</a></span>
+          <span class="loc">The Conversation</span>
+        </div>
+        <div class="row3">
+          <span class="yr">2024</span>
+          <span class="nm">Gendered devaluation and retention among U.S. faculty</span>
+          <span class="loc">CSWEP News</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="band">
       <div class="sec-head"><h2>Press</h2></div>
       <div class="press-row">
         <span class="lbl">Coverage</span>
@@ -645,45 +662,8 @@ img{max-width:100%}
           <span class="about">on the faculty retention paper</span>
         </div>
       </div>
-      <div class="press-row">
-        <span class="lbl">Writing</span>
-        <div class="outlets">
-          <a href="https://theconversation.com/most-us-book-bans-target-childrens-literature-featuring-diverse-characters-and-authors-of-color-238731" target="_blank" rel="noopener">The Conversation</a>
-          <span class="about">op-ed on US book bans</span>
-        </div>
-      </div>
     </section>
 
-    <section class="band">
-      <div class="sec-head"><h2>Talks</h2><span class="aside">Full record, posters included, on the <a href="{{ "/cv/" | relative_url }}#presentations">CV</a></span></div>
-      <div class="rows" id="talks">
-        <div class="row3"><span class="yr">2026</span><span class="nm">IAGG World Congress of Gerontology and Geriatrics</span><span class="loc">Amsterdam</span></div>
-        <div class="row3"><span class="yr">2026</span><span class="nm">Society for Longitudinal and Life Course Studies</span><span class="loc">Brussels</span></div>
-        <div class="row3"><span class="yr">2026</span><span class="nm">Sociological Science Conference</span><span class="loc">Palo Alto</span></div>
-        <div class="row3"><span class="yr">2026</span><span class="nm">Data-Intensive Research Conference</span><span class="loc">Minneapolis</span></div>
-        <div class="row3"><span class="yr">2025</span><span class="nm">Atlanta Conference on Science &amp; Innovation Policy<a class="slides" href="{{ "/atlc_undergrad.pdf" | relative_url }}" target="_blank" rel="noopener">slides</a><a class="slides" href="{{ "/atlc_grants.pdf" | relative_url }}" target="_blank" rel="noopener">slides</a></span><span class="loc">Atlanta</span></div>
-        <div class="row3"><span class="yr">2025</span><span class="nm">SCL Futures Project Convening</span><span class="loc">Stanford</span></div>
-        <div class="row3 extra"><span class="yr">2025</span><span class="nm">NCWIT</span><span class="loc">invited</span></div>
-        <div class="row3 extra"><span class="yr">2024</span><span class="nm">Rising Stars in Data Science Workshop</span><span class="loc"></span></div>
-        <div class="row3 extra"><span class="yr">2024</span><span class="nm">Association for the Study of Higher Education</span><span class="loc"></span></div>
-        <div class="row3 extra"><span class="yr">2024</span><span class="nm">CU Academic Leadership Conference</span><span class="loc">Boulder</span></div>
-        <div class="row3 extra"><span class="yr">2024</span><span class="nm">Athena Fellowship for Girls in STEM Panel</span><span class="loc">invited</span></div>
-        <div class="row3 extra"><span class="yr">2024</span><span class="nm">Coding it Forward Public Technology Showcase</span><span class="loc">12 fellows</span></div>
-        <div class="row3 extra"><span class="yr">2024</span><span class="nm">International Conference on the Science of Science &amp; Innovation</span><span class="loc"></span></div>
-        <div class="row3 extra"><span class="yr">2024</span><span class="nm">Kilpatrick Group, CU Applied Mathematics</span><span class="loc">invited</span></div>
-        <div class="row3 extra"><span class="yr">2024</span><span class="nm">Academic Analytics Research Center<a class="slides" href="{{ "/AARC_Feb2024.pdf" | relative_url }}" target="_blank" rel="noopener">slides</a></span><span class="loc">invited</span></div>
-        <div class="row3 extra"><span class="yr">2023</span><span class="nm">CU Office of Faculty Affairs</span><span class="loc">invited</span></div>
-        <div class="row3 extra"><span class="yr">2023</span><span class="nm">Atlanta Conference on Science &amp; Innovation Policy<a class="slides" href="{{ "/ATLC23.pdf" | relative_url }}" target="_blank" rel="noopener">slides</a></span><span class="loc">Atlanta</span></div>
-        <div class="row3 extra"><span class="yr">2023</span><span class="nm">International Conference on Computational Social Science<a class="slides" href="{{ "/IC2S2_23.pdf" | relative_url }}" target="_blank" rel="noopener">slides</a></span><span class="loc"></span></div>
-        <div class="row3 extra"><span class="yr">2022</span><span class="nm">Women in Network Science &amp; Diversify NetSci Satellite</span><span class="loc"></span></div>
-        <div class="row3 extra"><span class="yr">2022</span><span class="nm">International Conference on Computational Social Science</span><span class="loc"></span></div>
-        <div class="row3 extra"><span class="yr">2022</span><span class="nm">International Conference on the Science of Science &amp; Innovation</span><span class="loc"></span></div>
-        <div class="row3 extra"><span class="yr">2020</span><span class="nm">International Memory Workshop</span><span class="loc">invited</span></div>
-        <div class="row3 extra"><span class="yr">2019</span><span class="nm">American Handwriting Analysis Foundation</span><span class="loc">invited</span></div>
-        <div class="row3 extra"><span class="yr">2019</span><span class="nm">Computer Vision for Global Challenges Workshop, CVPR</span><span class="loc"></span></div>
-      </div>
-      <button class="more" type="button" data-more="talks" hidden></button>
-    </section>
 
     <section class="band">
       <div class="sec-head"><h2>News</h2></div>
