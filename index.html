@@ -8,17 +8,17 @@ permalink: /
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Katie Spoon</title>
 <meta name="description" content="Katie Spoon studies how inequality accumulates across education, careers and health, at the scale of whole populations. Data Science Fellow and New Map of Life Fellow at Stanford University.">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Lora:wght@700&display=swap">
 <style>
 /* One column. An identity band that scrolls away under a condensed bar, then five
    collapsible research eras, then teaching and service behind a tab. Type is deliberately
    plain: one sans for everything, a mono only for labels, flat cards with no shadow. */
 :root{
-  --bg:#ffffff; --surface:#ffffff; --surface-2:#f1f4f7;
+  --bg:#ffffff; --surface:#ffffff; --surface-2:#ffffff;
   --ink:#15181e; --ink-soft:#575e6b; --ink-faint:#8b93a1;
   --rule:#d7dce3; --shadow:18 24 38;
   --era-health:#0f7b6c; --era-census:#1f6f8b; --era-careers:#44489c; --era-ibm:#8a5526; --era-dys:#993a66;
-  --accent:#44489c;
+  --accent:#217394;
   --font-body:"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
   --font-data:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
 }
@@ -27,14 +27,14 @@ permalink: /
   --ink:#e9ebef; --ink-soft:#a0a8b6; --ink-faint:#737b8a;
   --rule:#2c313b; --shadow:0 0 0;
   --era-health:#3fb6a2; --era-census:#5fb3d4; --era-careers:#8b93ef; --era-ibm:#d4a06b; --era-dys:#e384ae;
-  --accent:#8b93ef; color-scheme:dark;
+  --accent:#6fb4d0; color-scheme:dark;
 }}
 :root[data-theme="dark"]{
   --bg:#111318; --surface:#1a1d24; --surface-2:#23272f;
   --ink:#e9ebef; --ink-soft:#a0a8b6; --ink-faint:#737b8a;
   --rule:#2c313b; --shadow:0 0 0;
   --era-health:#3fb6a2; --era-census:#5fb3d4; --era-careers:#8b93ef; --era-ibm:#d4a06b; --era-dys:#e384ae;
-  --accent:#8b93ef; color-scheme:dark;
+  --accent:#6fb4d0; color-scheme:dark;
 }
 
 *{box-sizing:border-box}
@@ -57,13 +57,16 @@ img{max-width:100%}
 .page{display:grid;gap:40px;padding-block:36px 56px}
 
 /* ---- condensed bar ---- */
-.stuck{position:sticky;top:0;z-index:9;background:color-mix(in srgb,var(--bg) 96%,transparent);
-  backdrop-filter:blur(10px);border-bottom:1px solid transparent;opacity:0;translate:0 -6px;pointer-events:none;
+/* Opaque, not translucent: on a white page the content scrolling underneath showed through
+   and collided with the name. */
+.stuck{position:sticky;top:0;z-index:9;background:var(--bg);
+  border-bottom:1px solid transparent;opacity:0;translate:0 -6px;pointer-events:none;
   transition:opacity .22s ease,translate .22s ease,border-color .22s}
 .stuck.on{opacity:1;translate:0;pointer-events:auto;border-bottom-color:var(--rule)}
 .stuck .in{max-width:920px;margin:0 auto;padding-block:9px;display:flex;gap:14px;align-items:center;
   padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
-.stuck .nm{font-size:17.5px;font-weight:600;letter-spacing:-.015em;margin-right:auto;white-space:nowrap}
+.stuck .nm{font-family:"Lora",Georgia,"Times New Roman",serif;font-size:18px;font-weight:700;letter-spacing:-.01em;
+  margin-right:auto;white-space:nowrap;color:var(--accent)}
 .stuck .nm a{text-decoration:none}
 
 /* ---- icon links ---- */
@@ -81,9 +84,11 @@ img{max-width:100%}
 
 /* ---- identity ---- */
 .ident{display:grid;grid-template-columns:auto 1fr;gap:0 30px;align-items:start}
-.ident img{width:180px;height:241px;border-radius:2px;object-fit:cover;display:block}
-.ident h1{font-size:clamp(26px,3.6vw,33px);font-weight:600;letter-spacing:-.018em;line-height:1.15}
-.ident h1 .pro{font-size:14px;font-weight:400;letter-spacing:0;color:var(--ink-faint);margin-left:9px;white-space:nowrap}
+.ident img{width:230px;height:308px;border-radius:2px;object-fit:cover;display:block}
+.ident h1{font-family:"Lora",Georgia,"Times New Roman",serif;font-size:clamp(28px,3.8vw,36px);font-weight:700;
+  letter-spacing:-.01em;line-height:1.15;color:var(--accent)}
+.ident h1 .pro{font-family:var(--font-body);font-size:14px;font-weight:400;letter-spacing:0;color:var(--ink-faint);
+  margin-left:10px;white-space:nowrap}
 .ident .what{font-size:18px;line-height:1.5;margin-top:9px;max-width:46ch}
 .ident .where{font-size:14px;color:var(--ink-soft);margin-top:7px}
 .ident .short-bio{font-size:15px;line-height:1.6;color:var(--ink-soft);margin-top:12px;max-width:62ch}
@@ -230,7 +235,7 @@ img{max-width:100%}
 @media (max-width:620px){
   .page{gap:32px}
   .ident{grid-template-columns:1fr;gap:14px}
-  .ident img{width:132px;height:177px}
+  .ident img{width:170px;height:228px}
   .era-panel{padding-left:24px}
   .era-figs{grid-template-columns:1fr}
   .era-meta .ct{display:none}
@@ -353,7 +358,7 @@ img{max-width:100%}
 <div class="page" id="top">
 
   <header class="band ident">
-    <img src="{{ "/assets/profile_pic_web.jpg" | relative_url }}" alt="Katie Spoon" width="180" height="241">
+    <img src="{{ "/assets/profile_pic_web.jpg" | relative_url }}" alt="Katie Spoon" width="230" height="308">
     <div>
       <h1>Katie Spoon <span class="pro">she/her</span></h1>
       <p class="what">I study how inequality accumulates across education, careers and health &mdash; at the scale of whole populations.</p>
