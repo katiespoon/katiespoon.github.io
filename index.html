@@ -208,7 +208,6 @@ img{max-width:100%}
 .row3 .nm a{color:var(--accent);text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 30%,transparent)}
 .row3 .nm a:hover{border-bottom-color:var(--accent)}
 .row3 .loc{font-size:13px;color:var(--ink-faint);white-space:nowrap}
-#service .row3{grid-template-columns:76px 1fr auto}
 .slides{font-family:var(--font-data);font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--accent);
   text-decoration:none;border:1px solid color-mix(in srgb,var(--accent) 35%,var(--rule));padding:2px 6px;margin-left:8px;white-space:nowrap}
 .item{display:grid;grid-template-columns:100px 1fr;gap:0 16px;padding:11px 0;border-top:1px solid var(--rule)}
@@ -225,9 +224,6 @@ img{max-width:100%}
 .more{justify-self:start;margin-top:12px;background:transparent;border:1px solid var(--rule);
   padding:6px 15px;font-size:13.5px;color:var(--ink-soft);cursor:pointer;transition:.15s}
 .more:hover{color:var(--ink);border-color:var(--ink-faint)}
-.reviewing{margin-top:16px;padding-top:13px;border-top:1px solid var(--rule);font-size:13.5px;color:var(--ink-soft);line-height:1.6}
-.reviewing .lbl{font-family:var(--font-data);font-size:11px;letter-spacing:.11em;text-transform:uppercase;
-  color:var(--ink-faint);display:block;margin-bottom:4px}
 
 /* ---- footer ---- */
 .foot{border-top:1px solid var(--rule);padding-top:16px;display:flex;flex-wrap:wrap;gap:10px 20px;align-items:center;
@@ -245,7 +241,7 @@ img{max-width:100%}
   .era-meta .ct{display:none}
   .press-row,.trow{grid-template-columns:1fr;gap:6px}
   .trow .role{padding-top:0}
-  .row3,#service .row3{grid-template-columns:44px 1fr;gap:0 12px}
+  .row3{grid-template-columns:44px 1fr;gap:0 12px}
   .row3 .loc{grid-column:2;text-align:left;font-size:12.5px}
   .item{grid-template-columns:1fr;gap:3px}
   .item .when{padding-top:0}
@@ -392,8 +388,8 @@ img{max-width:100%}
 
   <nav class="band pagenav" role="tablist" aria-label="Sections">
     <button role="tab" id="tab-research" aria-selected="true" aria-controls="view-research" data-tab="research">Research</button>
+    <button role="tab" id="tab-teaching" aria-selected="false" aria-controls="view-teaching" data-tab="teaching">Teaching</button>
     <button role="tab" id="tab-writing" aria-selected="false" aria-controls="view-writing" data-tab="writing">Writing</button>
-    <button role="tab" id="tab-teaching" aria-selected="false" aria-controls="view-teaching" data-tab="teaching">Teaching &amp; Service</button>
   </nav>
 
   <div class="views">
@@ -672,26 +668,6 @@ img{max-width:100%}
 
   </div>
 
-  <div class="view" role="tabpanel" id="view-writing" aria-labelledby="tab-writing">
-
-    <section class="band">
-      <div class="sec-head"><h2>Writing</h2><span class="aside">Essays and perspectives</span></div>
-      <div class="rows">
-        <div class="row3">
-          <span class="yr">2024</span>
-          <span class="nm"><a href="https://theconversation.com/most-us-book-bans-target-childrens-literature-featuring-diverse-characters-and-authors-of-color-238731" target="_blank" rel="noopener">Most US book bans target children&rsquo;s literature featuring diverse characters and authors of color</a></span>
-          <span class="loc">The Conversation</span>
-        </div>
-        <div class="row3">
-          <span class="yr">2024</span>
-          <span class="nm">Gendered devaluation and retention among U.S. faculty</span>
-          <span class="loc">CSWEP News</span>
-        </div>
-      </div>
-    </section>
-
-  </div>
-
   <div class="view" role="tabpanel" id="view-teaching" aria-labelledby="tab-teaching">
 
     <section class="band">
@@ -716,20 +692,25 @@ img{max-width:100%}
       </div>
     </section>
 
+
+  </div>
+
+  <div class="view" role="tabpanel" id="view-writing" aria-labelledby="tab-writing">
+
     <section class="band">
-      <div class="sec-head"><h2>Service</h2></div>
-      <div class="rows" id="service">
-        <div class="row3"><span class="yr">2024&ndash;25</span><span class="nm">Graduate &amp; Family Housing Resident Council, secretary and treasurer</span><span class="loc">CU Boulder</span></div>
-        <div class="row3"><span class="yr">2020&ndash;25</span><span class="nm">Computer Science PhD application mentor</span><span class="loc">CU Boulder</span></div>
-        <div class="row3"><span class="yr">2022</span><span class="nm">You're @ CU Research Program, graduate student mentor</span><span class="loc">CU Boulder</span></div>
-        <div class="row3"><span class="yr">2021&ndash;22</span><span class="nm">McNair Scholars, graduate student mentor</span><span class="loc">CU Boulder</span></div>
-        <div class="row3"><span class="yr">2020&ndash;22</span><span class="nm">Engineering mentor for underrepresented first-year undergraduates</span><span class="loc">CU Boulder</span></div>
-        <div class="row3"><span class="yr">2016&ndash;19</span><span class="nm">Lead ambassador, Luddy School of Informatics, Computing &amp; Engineering</span><span class="loc">Indiana</span></div>
-        <div class="row3"><span class="yr">2016&ndash;17</span><span class="nm">Software development intern, Serve IT Nonprofit Technology Clinic</span><span class="loc">Indiana</span></div>
+      <div class="sec-head"><h2>Writing</h2><span class="aside">Essays and perspectives</span></div>
+      <div class="rows">
+        <div class="row3">
+          <span class="yr">2024</span>
+          <span class="nm"><a href="https://theconversation.com/most-us-book-bans-target-childrens-literature-featuring-diverse-characters-and-authors-of-color-238731" target="_blank" rel="noopener">Most US book bans target children&rsquo;s literature featuring diverse characters and authors of color</a></span>
+          <span class="loc">The Conversation</span>
+        </div>
+        <div class="row3">
+          <span class="yr">2024</span>
+          <span class="nm">Gendered devaluation and retention among U.S. faculty</span>
+          <span class="loc">CSWEP News</span>
+        </div>
       </div>
-      <p class="reviewing"><span class="lbl">Reviewer for</span>Behaviour Research and Therapy &middot; eLife &middot;
-        The Lancet Regional Health &ndash; Americas &middot; Proceedings of the ACM on Interactive, Mobile, Wearable and
-        Ubiquitous Technologies &middot; Research Policy &middot; Social Policy &amp; Administration</p>
     </section>
 
   </div>
@@ -854,15 +835,14 @@ img{max-width:100%}
     btn.hidden = false;
     function sync(){
       extra.forEach(function(el){ el.hidden = !open; });
-      btn.textContent = open ? "Show fewer"
-        : "Show all " + $$("." + (extra[0].className.split(" ")[0]), list).length + " →";
+      btn.textContent = open ? "Show fewer" : "Show more";
     }
     sync();
     btn.addEventListener("click", function(){ open = !open; sync(); });
   });
 
   /* ---- tabs ---- */
-  var TABS = ["research", "writing", "teaching"];
+  var TABS = ["research", "teaching", "writing"];
   var cur = "research";
   function showTab(name, push){
     if (TABS.indexOf(name) < 0 || name === cur) return;
