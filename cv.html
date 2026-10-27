@@ -1,0 +1,726 @@
+---
+permalink: /cv/
+title: CV
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Katie Spoon &middot; CV</title>
+<meta name="description" content="Curriculum vitae of Katie Spoon, Data Science Fellow and New Map of Life Fellow at Stanford University.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<style>
+/* Matches the PDF: Lora throughout, headings in #217394, bold lead-in with a right-aligned date. */
+:root{
+  --teal:#217394;
+  --teal-soft:#4e92ad;
+  --ink:#1a1a1a;
+  --ink-soft:#4a4a4a;
+  --rule:#d9dee3;
+  --bg:#ffffff;
+  --mark:#ffe9a8;
+  --serif:"Lora",Georgia,"Times New Roman",serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --teal:#6fb4d0; --teal-soft:#8ac3da; --ink:#e8eaec; --ink-soft:#aab3bb;
+  --rule:#333a41; --bg:#15181b; --mark:#6b5a1f; color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --teal:#6fb4d0; --teal-soft:#8ac3da; --ink:#e8eaec; --ink-soft:#aab3bb;
+  --rule:#333a41; --bg:#15181b; --mark:#6b5a1f; color-scheme:dark;
+}
+
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--serif);font-size:15px;line-height:1.5;
+  -webkit-font-smoothing:antialiased}
+a{color:var(--teal)}
+h1,h2,h3{margin:0;text-wrap:balance}
+
+.wrap{max-width:760px;margin:0 auto;
+  padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px));
+  padding-block:0 48px}
+
+/* ---- toolbar ---- */
+.tools{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 92%,transparent);
+  backdrop-filter:blur(8px);border-bottom:1px solid var(--rule);margin-bottom:28px}
+.tools .in{max-width:760px;margin:0 auto;
+  padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px));
+  padding-block:10px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+#q{flex:1 1 200px;min-width:0;font-family:var(--serif);font-size:14px;color:var(--ink);background:var(--bg);
+  border:1px solid var(--rule);border-radius:3px;padding:7px 11px}
+#q::placeholder{color:var(--ink-soft);opacity:.75}
+#q:focus{outline:2px solid var(--teal);outline-offset:-1px;border-color:var(--teal)}
+.tools button,.tools a.btn{font-family:var(--serif);font-size:13.5px;cursor:pointer;background:var(--bg);color:var(--ink-soft);
+  border:1px solid var(--rule);border-radius:3px;padding:7px 12px;text-decoration:none;white-space:nowrap;transition:.15s}
+.tools button:hover,.tools a.btn:hover{color:var(--teal);border-color:var(--teal)}
+.hits{font-size:12.5px;color:var(--ink-soft);white-space:nowrap}
+
+/* ---- masthead ---- */
+.mast{text-align:center;padding-block:14px 4px}
+.mast h1{font-size:33px;font-weight:700;color:var(--teal);letter-spacing:-.01em;line-height:1.15}
+.mast .contact{margin:9px 0 0;font-size:14.5px;color:var(--ink-soft);display:flex;justify-content:center;
+  gap:6px 22px;flex-wrap:wrap}
+.mast .contact a{text-decoration:none;display:inline-flex;align-items:center;gap:6px}
+.mast .contact a:hover{text-decoration:underline}
+/* Inline SVG rather than an icon font or emoji: a font would need embedding to survive
+   printing, and emoji render in colour at unpredictable sizes. */
+.mast .contact .ci{width:1.02em;height:1.02em;flex:0 0 auto;fill:none;stroke:currentColor;
+  stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;transform:translateY(.5px)}
+
+/* ---- jump nav ---- */
+.jump{display:flex;flex-wrap:wrap;gap:4px 14px;justify-content:center;font-size:13px;
+  border-block:1px solid var(--rule);padding-block:10px;margin-block:22px 30px}
+.jump a{color:var(--ink-soft);text-decoration:none}
+.jump a:hover{color:var(--teal)}
+
+/* ---- sections ---- */
+.sec{margin-bottom:26px}
+.sec > h2{font-size:21px;font-weight:700;color:var(--teal);margin-bottom:7px;scroll-margin-top:62px}
+.sec h3{font-size:15px;font-weight:700;color:var(--teal-soft);margin:16px 0 5px}
+.entry{margin-bottom:3px;break-inside:avoid}
+.line{display:flex;gap:0 18px;align-items:baseline}
+.line .lead{flex:1 1 auto;min-width:0}
+/* On screen the date sits a step down from the title so it reads as a margin note.
+   In print it returns to body size and black, matching the original PDF.
+   No tabular-nums: Lora's tabular figures are ~20% wider than its proportional ones and
+   visibly different glyphs, which read as a second typeface next to the body text. */
+.line .date{flex:0 0 auto;color:var(--ink-soft);font-size:.88em;white-space:nowrap}
+.sub{padding-left:26px;color:var(--ink-soft);font-size:14px}
+.sub i,.sub em{color:var(--ink-soft)}
+b,strong{font-weight:700}
+
+/* numbered publications — the number is fixed at load, so filtering never renumbers them */
+/* Numbering is a CSS counter, so it needs no JavaScript and renumbers itself when an
+   entry is added, removed or moved. The number sits in a real grid column rather than an
+   absolutely positioned ::before, which previously let it print at the foot of one page
+   while its entry moved to the next.
+   While a search is active, hidden entries would stop incrementing the counter, so the
+   numbers switch to the fixed data-n values JS recorded at load. */
+.pubs{counter-reset:pub}
+.pubs .entry{display:grid;grid-template-columns:26px 1fr;gap:0 6px;margin-bottom:9px;counter-increment:pub}
+/* right-aligned so the full stops line up, without needing tabular figures */
+.pubs .entry::before{content:counter(pub) ".";grid-column:1;color:var(--ink-soft);text-align:right}
+.pubs.filtering .entry::before{content:attr(data-n) "."}
+.pubs .entry > *{grid-column:2;min-width:0}
+.pubs .entry .sub{padding-left:0}
+.authors{color:var(--ink-soft);font-size:14px}
+.authors .me{color:var(--ink);font-weight:600}
+.venue{font-style:italic}
+.pubnote{color:var(--teal-soft);font-size:13.5px;padding-left:0}
+.legend{font-size:13px;color:var(--ink-soft);margin-bottom:10px}
+.tag-link{font-size:12.5px;text-decoration:none;border:1px solid var(--rule);border-radius:2px;
+  padding:1px 6px;margin-left:6px;white-space:nowrap;color:var(--teal)}
+.tag-link:hover{border-color:var(--teal)}
+
+/* presentations are grouped by project */
+.proj{font-weight:700;margin:14px 0 3px}
+.proj:first-of-type{margin-top:4px}
+
+.reviewer{margin-top:10px;font-size:14px;color:var(--ink-soft)}
+
+/* ---- search behaviour ---- */
+.hidden{display:none !important}
+mark{background:var(--mark);color:inherit;padding:0 1px;border-radius:2px}
+.empty{color:var(--ink-soft);font-style:italic;padding:18px 0}
+
+/* ---- footer ---- */
+.foot{border-top:1px solid var(--rule);margin-top:34px;padding-top:14px;font-size:13px;color:var(--ink-soft);
+  display:flex;gap:10px 20px;flex-wrap:wrap}
+.foot .right{margin-left:auto}
+
+/* ---- print: this is what makes the PDF ---- */
+@page{size:letter;margin:0.6in 0.75in}
+@media print{
+  :root{--teal:#217394;--teal-soft:#4e92ad;--ink:#000;--ink-soft:#333;--rule:#bbb;--bg:#fff}
+  body{font-size:10.2pt;line-height:1.35;background:#fff;color:#000}
+  .tools,.jump,.foot,.no-print{display:none !important}
+  .wrap{max-width:none;padding:0}
+  .mast{padding-top:0}
+  .mast h1{font-size:21pt}
+  .mast .contact{font-size:10pt;gap:4px 18px;color:#000}
+  .mast .contact a{color:#000}
+  .mast .contact .ci{stroke-width:1.9;print-color-adjust:exact;-webkit-print-color-adjust:exact}
+  .sec{margin-bottom:11pt}
+  .sec > h2{font-size:13pt;margin-bottom:3pt;break-after:avoid}
+  .sec h3{font-size:10.5pt;margin:7pt 0 2pt;break-after:avoid}
+  .proj{break-after:avoid}            /* never strand a project heading at a page foot */
+  .reviewer{break-before:avoid}       /* keep the reviewer list with the service entries */
+  p,.sub{orphans:2;widows:2}
+  .entry{margin-bottom:1pt}
+  .pubs .entry{margin-bottom:5pt}
+  .sub{font-size:9.6pt}
+  .line .date{font-size:1em;color:#000}
+  .tag-link{display:none}
+  mark{background:none}
+  a{color:#217394;text-decoration:none}
+}
+</style>
+</head>
+<body>
+
+<div class="tools no-print"><div class="in">
+  <input id="q" type="search" placeholder="Search this CV — try &ldquo;dyslexia&rdquo;, &ldquo;ICML&rdquo;, or &ldquo;2024&rdquo;" autocomplete="off" aria-label="Search this CV">
+  <span class="hits" id="hits" hidden></span>
+  <button id="print" type="button">Save as PDF</button>
+  <a class="btn" href="{{ '/' | relative_url }}">Home</a>
+</div></div>
+
+<div class="wrap">
+
+  <header class="mast">
+    <h1>Katie Spoon</h1>
+    <p class="contact">
+      <a href="mailto:kspoon@stanford.edu"><svg class="ci" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5"/></svg>kspoon@stanford.edu</a>
+      <a href="https://katiespoon.github.io"><svg class="ci" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 11 12 3.5 21 11"/><path d="M5.5 9.3V20h13V9.3"/><path d="M9.8 20v-6.2h4.4V20"/></svg>katiespoon.github.io</a>
+      <a href="https://scholar.google.com/citations?hl=en&amp;user=bHf0QxEAAAAJ"><svg class="ci" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4 2.5 9.2 12 14.4l9.5-5.2z"/><path d="M6.5 11.5v4.3c0 1.7 2.5 3.1 5.5 3.1s5.5-1.4 5.5-3.1v-4.3"/></svg>Google Scholar</a>
+    </p>
+  </header>
+
+  <nav class="jump no-print" aria-label="Sections">
+    <a href="#interests">Research Interests</a>
+    <a href="#education">Education</a>
+    <a href="#employment">Employment</a>
+    <a href="#honors">Honors &amp; Awards</a>
+    <a href="#publications">Publications</a>
+    <a href="#grants">Grants</a>
+    <a href="#presentations">Presentations</a>
+    <a href="#teaching">Teaching</a>
+    <a href="#mentoring">Mentoring</a>
+    <a href="#service">Service</a>
+    <a href="#professional">Professional Activities</a>
+  </nav>
+
+  <main id="cv">
+
+  <section class="sec" id="interests">
+    <h2>Research Interests</h2>
+    <div class="entry"><div class="line"><span class="lead"><b>Computational social science</b> &mdash; big data, administrative records, surveys, networks, text analysis</span></div></div>
+    <div class="entry"><div class="line"><span class="lead"><b>Social inequalities</b> &mdash; in education, careers, health, and their policy implications</span></div></div>
+    <div class="entry"><div class="line"><span class="lead"><b>Science of science</b> &mdash; faculty retention, workforce development, institutional prestige</span></div></div>
+    <div class="entry"><div class="line"><span class="lead"><b>Diversity, equity and inclusion (DEI)</b> &mdash; marginalized experiences in science, backlash to DEI, policy</span></div></div>
+    <div class="entry"><div class="line"><span class="lead"><b>Deep learning</b> &mdash; AI for social good, computer vision, natural language processing</span></div></div>
+  </section>
+
+  <section class="sec" id="education">
+    <h2>Education</h2>
+    <div class="entry">
+      <div class="line"><span class="lead"><b>Ph.D.</b> in Computer Science, University of Colorado Boulder</span><span class="date">2020 &ndash; 2025</span></div>
+      <div class="sub">Advisors: Aaron Clauset &amp; Dan Larremore</div>
+      <div class="sub">Dissertation: <i>Quantifying Systemic Inequities in the Training and Retention of Professors</i></div>
+    </div>
+    <div class="entry">
+      <div class="line"><span class="lead"><b>M.A.</b> in Education Policy, University of Colorado Boulder</span><span class="date">2022 &ndash; 2024</span></div>
+      <div class="sub">Advisor: Kevin Welner</div>
+      <div class="sub">Thesis: <i>Quantifying Inequitable Education Pathways to STEM Careers</i></div>
+    </div>
+    <div class="entry">
+      <div class="line"><span class="lead"><b>M.S.</b> in Computer Science, Indiana University Bloomington</span><span class="date">2018 &ndash; 2019</span></div>
+      <div class="sub">Advisors: David Crandall &amp; Katie Siek</div>
+      <div class="sub">Thesis: <i>Detecting Dyslexia in Handwriting Using Neural Networks</i></div>
+    </div>
+    <div class="entry">
+      <div class="line"><span class="lead"><b>B.S.</b> in Computer Science with highest honors, Minor: Math, Indiana University Bloomington</span><span class="date">2015 &ndash; 2019</span></div>
+    </div>
+  </section>
+
+  <section class="sec" id="employment">
+    <h2>Selected Employment</h2>
+    <div class="entry">
+      <div class="line"><span class="lead"><b>Data Science Fellow</b> and <b>New Map of Life Fellow</b></span><span class="date">2025 &ndash;</span></div>
+      <div class="sub">Stanford University, <i>Stanford Data Science</i> and <i>Stanford Center on Longevity</i> (Stanford, CA)</div>
+    </div>
+    <div class="entry">
+      <div class="line"><span class="lead"><b>Data Science Fellow</b> via Coding it Forward; 80 fellows selected from 4,500+ applications</span><span class="date">June &ndash; Aug 2024</span></div>
+      <div class="sub">U.S. Census Bureau, <i>Enhancing Health Data Group</i> (Remote)</div>
+    </div>
+    <div class="entry">
+      <div class="line"><span class="lead"><b>Graduate Research Assistant</b></span><span class="date">2024 &ndash; 2025</span></div>
+      <div class="sub">National Center for Women &amp; Information Technology (Boulder, CO)</div>
+    </div>
+    <div class="entry">
+      <div class="line"><span class="lead"><b>Research Engineer</b></span><span class="date">June 2019 &ndash; Aug 2020</span></div>
+      <div class="sub">IBM Research, <i>Artificial Intelligence Hardware Group</i> (San Jose, CA)</div>
+    </div>
+  </section>
+
+  <section class="sec" id="honors">
+    <h2>Honors &amp; Awards</h2>
+    <div class="entry">
+      <div class="line"><span class="lead"><b>Achievement Reward for College Scientists</b>, ARCS Foundation</span><span class="date">2024 &ndash; 2025</span></div>
+      <div class="sub">$7,500 award of &ldquo;unrestricted funding to create new knowledge &amp; innovative technology&rdquo;</div>
+    </div>
+    <div class="entry">
+      <div class="line"><span class="lead"><b>Rising Star in Data Science</b>, UC San Diego, UChicago, and Stanford</span><span class="date">2024</span></div>
+      <div class="sub">&ldquo;Celebrating and fast-tracking the careers of exceptional data scientists&rdquo;</div>
+    </div>
+    <div class="entry">
+      <div class="line"><span class="lead"><b>NSF Graduate Research Fellowship</b></span><span class="date">2021 &ndash; 2024</span></div>
+      <div class="sub">$37,000/year and tuition for three years of graduate school</div>
+    </div>
+    <div class="entry">
+      <div class="line"><span class="lead"><b>National Center for Women in Technology Collegiate Award</b></span><span class="date">2019</span></div>
+      <div class="sub">$10,000 award &ldquo;recognizing technical contributions to projects with high innovation &amp; impact&rdquo;</div>
+    </div>
+    <div class="entry">
+      <div class="line"><span class="lead"><b>Provost&rsquo;s Award for Outstanding Undergraduate Research and Creative Activity</b>, Indiana Univ.</span><span class="date">2019</span></div>
+      <div class="sub">Mathematics &amp; Natural Sciences winner, one of five categories total</div>
+    </div>
+    <div class="entry">
+      <div class="line"><span class="lead"><b>Graduate Teaching Assistant of the Year</b>, Indiana Univ.</span><span class="date">2019</span></div>
+    </div>
+    <div class="entry">
+      <div class="line"><span class="lead"><b>Emerging Research Scholar</b>, Center of Excellence for Women &amp; Technology, Indiana Univ.</span><span class="date">2015 &ndash; 2016</span></div>
+    </div>
+
+    <h3>Publication &amp; Presentation Awards</h3>
+    <div class="entry"><div class="line"><span class="lead"><b>Annual Outstanding Research Paper</b>, Univ. Colorado</span><span class="date">2024</span></div></div>
+    <div class="entry"><div class="line"><span class="lead"><b>Bell Family Endowed Computer Science Award</b>, &ldquo;recognizing outstanding research&rdquo;, Univ. Colorado</span><span class="date">2024</span></div></div>
+    <div class="entry"><div class="line"><span class="lead"><b>Research Expo Winner</b>, Univ. Colorado</span><span class="date">2024</span></div></div>
+    <div class="entry"><div class="line"><span class="lead"><b>Publication Recognition Award</b>, Univ. Colorado</span><span class="date">2023</span></div></div>
+    <div class="entry"><div class="line"><span class="lead"><b>Best Poster Award</b>, International Conference on Machine Learning</span><span class="date">2019</span></div></div>
+    <div class="entry"><div class="line"><span class="lead"><b>Highlighted Proposal</b>, Global Challenges Workshop, Computer Vision and Pattern Recognition</span><span class="date">2019</span></div></div>
+    <div class="entry"><div class="line"><span class="lead"><b>Exemplary paper in social and interdisciplinary sciences</b>, <i>Science Advances</i></span><span class="date">2023</span></div></div>
+  </section>
+
+  <section class="sec pubs" id="publications">
+    <h2>Publications</h2>
+    <p class="legend">* contributed equally &nbsp;&dagger; listed alphabetically &nbsp;&deg; mentee coauthor</p>
+
+    <h3>In Preparation</h3>
+    <div class="entry">
+      <div class="line"><span class="lead">Backlash to diversity, equity and inclusion efforts among faculty</span><span class="date">2024</span></div>
+      <div class="sub authors"><span class="me">K. Spoon</span>, &deg;J. Mendy, L. Ekpe, and L. A. Rivera. Draft available upon request.</div>
+    </div>
+    <div class="entry">
+      <div class="line"><span class="lead">The elite undergraduate backgrounds of U.S. professors</span><span class="date">2024</span></div>
+      <div class="sub authors">*<span class="me">K. Spoon</span>, *E. Lee, A. Clauset, D. B. Larremore. Draft available upon request.</div>
+    </div>
+
+    <h3>Peer-Reviewed Journal Articles</h3>
+    <div class="entry">
+      <div class="line"><span class="lead">Devaluation underlies gendered U.S. faculty departures across disciplines and institutions
+        <a class="tag-link" href="https://doi.org/10.1093/pnasnexus/pgag306">Paper</a></span><span class="date">2026</span></div>
+      <div class="sub authors"><span class="me">K. Spoon</span>, &deg;J. Mendy, &deg;M. Martinez, M. Galesic, D. B. Larremore, A. Clauset, L. A. Rivera. <span class="venue">PNAS Nexus</span>.</div>
+    </div>
+    <div class="entry">
+      <div class="line"><span class="lead">Book bans in political context: Evidence from U.S. public schools
+        <a class="tag-link" href="https://academic.oup.com/pnasnexus/article/3/6/pgae197/7689238">Paper</a></span><span class="date">2024</span></div>
+      <div class="sub authors">&dagger; *M. S. O. Goncalves, *I. Langrock, *J. LaViolette, *<span class="me">K. Spoon</span>. <span class="venue">PNAS Nexus</span>.</div>
+    </div>
+    <div class="entry">
+      <div class="line"><span class="lead">Gender and retention patterns among U.S. faculty
+        <a class="tag-link" href="https://www.science.org/doi/10.1126/sciadv.adi2205">Paper</a></span><span class="date">2023</span></div>
+      <div class="sub authors"><span class="me">K. Spoon</span>, N. LaBerge, K. H. Wapman, S. Zhang, A. C. Morgan, M. Galesic, B. K. Fosdick, D. B. Larremore, and A. Clauset. <span class="venue">Science Advances</span>.</div>
+      <div class="sub pubnote">Annual Outstanding Research Paper, 2024 &middot; Bell Family Endowed Computer Science Award, 2024 &middot; Publication Recognition Award, 2023</div>
+    </div>
+    <div class="entry">
+      <div class="line"><span class="lead">Towards software-equivalent accuracy on transformer-based deep neural networks with analog memory devices
+        <a class="tag-link" href="https://www.frontiersin.org/articles/10.3389/fncom.2021.675741/full">Paper</a></span><span class="date">2021</span></div>
+      <div class="sub authors"><span class="me">K. Spoon</span>, H. Tsai, A. Chen, M. J. Rasch, S. Ambrogio, C. Mackin, A. Fasoli, A. Friz, P. Narayanan, M. Stanisavljevic, and G. W. Burr. <span class="venue">Frontiers in Computational Neuroscience</span>.</div>
+    </div>
+    <div class="entry">
+      <div class="line"><span class="lead">Noise-resilient DNN: Tolerating noise in PCM-based AI accelerators via noise-aware training</span><span class="date">2021</span></div>
+      <div class="sub authors">S. Kariyappa, H. Tsai, <span class="me">K. Spoon</span>, S. Ambrogio, P. Narayanan, C. Mackin, A. Chen, M. Quereshi, and G. W. Burr. <span class="venue">IEEE Transactions on Electron Devices</span>.</div>
+    </div>
+
+    <h3>Peer-Reviewed Conference Papers</h3>
+    <div class="entry">
+      <div class="line"><span class="lead">NSF EHR Core Research: Exploring faculty accountability within departmental change efforts</span><span class="date">2025</span></div>
+      <div class="sub authors">W. M. DuBow, H. Thiry, <span class="me">K. Spoon</span>. <span class="venue">ASEE Annual Conference &amp; Exposition</span>.</div>
+    </div>
+    <div class="entry">
+      <div class="line"><span class="lead">Mushroom-type phase change memory with projection liner: An array-level demonstration of conductance drift and noise mitigation</span><span class="date">2021</span></div>
+      <div class="sub authors">R. L. Bruce, et al. [including <span class="me">K. Spoon</span>]. <span class="venue">IEEE International Reliability Physics Symposium (IRPS)</span>.</div>
+    </div>
+    <div class="entry">
+      <div class="line"><span class="lead">Fully on-chip MAC at 14nm enabled by accurate row-wise programming of PCM-based weights and parallel vector-transport in duration-format</span><span class="date">2021</span></div>
+      <div class="sub authors">P. Narayanan, et al. [including <span class="me">K. Spoon</span>]. <span class="venue">Symposium on VLSI Technology</span>.</div>
+    </div>
+    <div class="entry">
+      <div class="line"><span class="lead">Neuromorphic computing with phase change, device reliability, and variability challenges</span><span class="date">2020</span></div>
+      <div class="sub authors">C. Mackin, et al. [including <span class="me">K. Spoon</span>]. <span class="venue">IEEE International Reliability Physics Symposium (IRPS)</span>.</div>
+    </div>
+    <div class="entry">
+      <div class="line"><span class="lead">Reducing the impact of phase-change memory conductance drift on the inference of large-scale hardware neural networks</span><span class="date">2019</span></div>
+      <div class="sub authors">S. Ambrogio, M. Gallot, <span class="me">K. Spoon</span>, H. Tsai, C. Mackin, M. Wesson, S. Kariyappa, P. Narayanan, C. C. Liu, A. Kumar, A. Chen, and G. W. Burr. <span class="venue">65th IEEE International Electron Devices Meeting (IEDM)</span>.</div>
+      <div class="sub pubnote">Ranked 2nd / 98 papers</div>
+    </div>
+
+    <h3>Peer-Reviewed Workshop Papers</h3>
+    <div class="entry">
+      <div class="line"><span class="lead">Accelerating deep neural networks with analog memory devices</span><span class="date">2020</span></div>
+      <div class="sub authors"><span class="me">K. Spoon</span>, S. Ambrogio, P. Narayanan, H. Tsai, C. Mackin, A. Chen, A. Fasoli, A. Friz, and G. W. Burr. <span class="venue">International Memory Workshop</span>.</div>
+    </div>
+    <div class="entry">
+      <div class="line"><span class="lead">Can we (and should we) use AI to detect dyslexia in children&rsquo;s handwriting?
+        <a class="tag-link" href="{{ '/dyslexia_neurips_aisg_2019.pdf' | relative_url }}">Paper</a></span><span class="date">2019</span></div>
+      <div class="sub authors"><span class="me">K. Spoon</span>, D. Crandall, K. Siek, and M. Fillmore. <span class="venue">AI for Social Good Workshop, NeurIPS</span>.</div>
+    </div>
+    <div class="entry">
+      <div class="line"><span class="lead">Towards detecting dyslexia in children&rsquo;s handwriting using neural networks
+        <a class="tag-link" href="{{ '/dyslexia_icml_aisg_2019.pdf' | relative_url }}">Paper</a></span><span class="date">2019</span></div>
+      <div class="sub authors"><span class="me">K. Spoon</span>, D. Crandall, and K. Siek. <span class="venue">AI for Social Good Workshop, International Conference on Machine Learning (ICML)</span>.</div>
+      <div class="sub pubnote">Best poster award</div>
+    </div>
+
+    <h3>Book Chapters</h3>
+    <div class="entry">
+      <div class="line"><span class="lead">Accelerating deep neural networks with analog memory devices</span><span class="date">2022</span></div>
+      <div class="sub authors"><span class="me">K. Spoon</span>, S. Ambrogio, P. Narayanan, H. Tsai, C. Mackin, A. Chen, A. Fasoli, A. Friz and G. W. Burr. In <span class="venue">Machine Learning &amp; Non-Volatile Memories</span>. Ed. C. Zambelli, Springer.</div>
+    </div>
+
+    <h3>Essays and Perspectives</h3>
+    <div class="entry">
+      <div class="line"><span class="lead">Most US book bans target children&rsquo;s literature featuring diverse characters and authors of color
+        <a class="tag-link" href="https://theconversation.com/most-us-book-bans-target-childrens-literature-featuring-diverse-characters-and-authors-of-color-238731">Op-ed</a></span><span class="date">2024</span></div>
+      <div class="sub authors"><span class="me">K. Spoon</span>. <span class="venue">The Conversation</span>.</div>
+    </div>
+    <div class="entry">
+      <div class="line"><span class="lead">Gendered devaluation and retention among U.S. faculty</span><span class="date">2024</span></div>
+      <div class="sub authors"><span class="me">K. Spoon</span> and A. Clauset. <span class="venue">Committee on the Status of Women in the Economics Profession (CSWEP) News</span> 2, 7&ndash;10.</div>
+    </div>
+
+    <h3>Dissertation</h3>
+    <div class="entry">
+      <div class="line"><span class="lead">Quantifying systemic inequities in the training and retention of professors</span><span class="date">2025</span></div>
+      <div class="sub authors"><span class="me">K. Spoon</span>. <span class="venue">University of Colorado Boulder</span>.</div>
+    </div>
+  </section>
+
+  <section class="sec" id="grants">
+    <h2>Grants</h2>
+    <div class="entry">
+      <div class="line"><span class="lead">Quantifying the origins and impacts of book bans in U.S. schools, $1,500</span><span class="date">2022</span></div>
+      <div class="sub">PI, with Isabelle Langrock (co-PI), Jack LaViolette (co-PI) and Marcelo S. O. Goncalves (co-PI)</div>
+      <div class="sub">Russell Sage Foundation &amp; Social Science Research Council</div>
+    </div>
+
+    <h3>Travel Funding</h3>
+    <div class="entry"><div class="line"><span class="lead">Conference Support Fellowship, CU Boulder, $2,000</span><span class="date">2024</span></div></div>
+    <div class="entry"><div class="line"><span class="lead">Graduate Student Travel Grant, CU Boulder, $450</span><span class="date">2024</span></div></div>
+    <div class="entry"><div class="line"><span class="lead">Graduate Student Travel Grant, CU Boulder, $450</span><span class="date">2023</span></div></div>
+    <div class="entry"><div class="line"><span class="lead">Summer Institute in Computational Social Science, full travel funding</span><span class="date">2022</span></div></div>
+    <div class="entry"><div class="line"><span class="lead">CVPR Global Challenges Workshop, full travel funding</span><span class="date">2019</span></div></div>
+    <div class="entry"><div class="line"><span class="lead">ICML AI for Social Good Workshop, travel scholarship &amp; registration fee waiver</span><span class="date">2019</span></div></div>
+    <div class="entry"><div class="line"><span class="lead">NCWIT annual conference, full travel funding</span><span class="date">2019</span></div></div>
+    <div class="entry"><div class="line"><span class="lead">Grace Hopper Celebration of Women in Computing, full travel funding</span><span class="date">2016</span></div></div>
+  </section>
+
+  <section class="sec" id="presentations">
+    <h2>Presentations</h2>
+
+    <p class="proj">Health across the life course</p>
+    <div class="entry"><div class="line"><span class="lead">IAGG World Congress of Gerontology and Geriatrics, Amsterdam, Talk</span><span class="date">2026</span></div></div>
+    <div class="entry"><div class="line"><span class="lead">Society for Longitudinal and Life Course Studies, Brussels, Talk</span><span class="date">2026</span></div></div>
+    <div class="entry"><div class="line"><span class="lead">Sociological Science Conference, Palo Alto, Talk</span><span class="date">2026</span></div></div>
+    <div class="entry"><div class="line"><span class="lead">Data-Intensive Research Conference, Minneapolis, Talk</span><span class="date">2026</span></div></div>
+
+    <p class="proj">Gendered retention patterns in academia</p>
+    <div class="entry"><div class="line"><span class="lead">SCL Futures Project Convening, Invited Talk</span><span class="date">2025</span></div></div>
+    <div class="entry"><div class="line"><span class="lead">NCWIT, Invited Talk</span><span class="date">2025</span></div></div>
+    <div class="entry"><div class="line"><span class="lead">Rising Stars in Data Science Workshop, Talk and Panel</span><span class="date">2024 &amp; 2025</span></div></div>
+    <div class="entry"><div class="line"><span class="lead">Association for the Study of Higher Education, Talk</span><span class="date">Nov 2024</span></div></div>
+    <div class="entry"><div class="line"><span class="lead">University of Colorado Boulder Academic Leadership Conference, Invited Talk</span><span class="date">Aug 2024</span></div></div>
+    <div class="entry"><div class="line"><span class="lead">Athena Fellowship for Girls in STEM Panel, Invited Talk</span><span class="date">Aug 2024</span></div></div>
+    <div class="entry"><div class="line"><span class="lead">International Conference on the Science of Science &amp; Innovation, Talk</span><span class="date">July 2024</span></div></div>
+    <div class="entry"><div class="line"><span class="lead">Kilpatrick Group, University of Colorado Boulder Applied Mathematics, Invited Talk</span><span class="date">Apr 2024</span></div></div>
+    <div class="entry">
+      <div class="line"><span class="lead">Academic Analytics Research Center, Invited Talk
+        <a class="tag-link" href="{{ '/AARC_Feb2024.pdf' | relative_url }}">Slides</a></span><span class="date">Feb 2024</span></div>
+    </div>
+    <div class="entry">
+      <div class="line"><span class="lead">University of Colorado Boulder Computer Science Research Expo, Poster</span><span class="date">Feb 2024</span></div>
+      <div class="sub pubnote">Expo Winner</div>
+    </div>
+    <div class="entry"><div class="line"><span class="lead">University of Colorado Boulder Office of Faculty Affairs, Invited Talk</span><span class="date">Dec 2023</span></div></div>
+    <div class="entry">
+      <div class="line"><span class="lead">International Conference on Computational Social Science, Poster
+        <a class="tag-link" href="{{ '/IC2S2_23.pdf' | relative_url }}">Slides</a></span><span class="date">July 2023</span></div>
+    </div>
+    <div class="entry">
+      <div class="line"><span class="lead">Atlanta Conference on Science &amp; Innovation Policy, Talk
+        <a class="tag-link" href="{{ '/ATLC23.pdf' | relative_url }}">Slides</a></span><span class="date">May 2023</span></div>
+    </div>
+    <div class="entry"><div class="line"><span class="lead">Women in Network Science &amp; Diversify NetSci Satellite, Talk</span><span class="date">July 2022</span></div></div>
+    <div class="entry"><div class="line"><span class="lead">International Conference on Computational Social Science, Talk</span><span class="date">July 2022</span></div></div>
+    <div class="entry"><div class="line"><span class="lead">International Conference on the Science of Science &amp; Innovation, Talk</span><span class="date">June 2022</span></div></div>
+
+    <p class="proj">Science and innovation policy</p>
+    <div class="entry">
+      <div class="line"><span class="lead">Atlanta Conference on Science &amp; Innovation Policy, undergraduate session
+        <a class="tag-link" href="{{ '/atlc_undergrad.pdf' | relative_url }}">Slides</a></span><span class="date">2025</span></div>
+    </div>
+    <div class="entry">
+      <div class="line"><span class="lead">Atlanta Conference on Science &amp; Innovation Policy, grants session
+        <a class="tag-link" href="{{ '/atlc_grants.pdf' | relative_url }}">Slides</a></span><span class="date">2025</span></div>
+    </div>
+
+    <p class="proj">Measuring community-level risk of declining healthcare access</p>
+    <div class="entry"><div class="line"><span class="lead">Coding it Forward Public Technology Showcase, Talk [12 fellows selected]</span><span class="date">Aug 2024</span></div></div>
+
+    <p class="proj">Quantifying inequitable education pathways to scientific and technical careers</p>
+    <div class="entry"><div class="line"><span class="lead">Association for the Study of Higher Education, Talk</span><span class="date">Nov 2024</span></div></div>
+    <div class="entry"><div class="line"><span class="lead">International Conference on the Science of Science &amp; Innovation, Talk</span><span class="date">July 2024</span></div></div>
+    <div class="entry"><div class="line"><span class="lead">American Educational Research Association Annual Meeting, Poster</span><span class="date">Apr 2024</span></div></div>
+
+    <p class="proj">Quantifying the origins and impacts of book bans in U.S. schools</p>
+    <div class="entry"><div class="line"><span class="lead">International Conference on Computational Social Science, Talk</span><span class="date">July 2023</span></div></div>
+
+    <p class="proj">The elite undergraduate backgrounds of U.S. professors</p>
+    <div class="entry"><div class="line"><span class="lead">International Conference on Computational Social Science, Poster</span><span class="date">July 2022</span></div></div>
+    <div class="entry"><div class="line"><span class="lead">International Conference on the Science of Science &amp; Innovation, Poster</span><span class="date">June 2022</span></div></div>
+
+    <p class="proj">Accelerating deep neural networks</p>
+    <div class="entry"><div class="line"><span class="lead">International Memory Workshop, Invited Talk</span><span class="date">May 2020</span></div></div>
+
+    <p class="proj">Towards detecting dyslexia in children&rsquo;s handwriting using neural networks</p>
+    <div class="entry"><div class="line"><span class="lead">American Handwriting Analysis Foundation, Invited Talk</span><span class="date">Nov 2019</span></div></div>
+    <div class="entry"><div class="line"><span class="lead">AI for Social Good Workshop, NeurIPS, Poster</span><span class="date">Dec 2019</span></div></div>
+    <div class="entry">
+      <div class="line"><span class="lead">AI for Social Good Workshop, ICML, Poster
+        <a class="tag-link" href="{{ '/dyslexia_icml_aisg_2019_poster.pdf' | relative_url }}">Poster</a></span><span class="date">June 2019</span></div>
+      <div class="sub pubnote">Best poster award</div>
+    </div>
+    <div class="entry"><div class="line"><span class="lead">AI for Social Good Workshop, ICML, Talk</span><span class="date">June 2019</span></div></div>
+    <div class="entry"><div class="line"><span class="lead">Computer Vision for Global Challenges Workshop, CVPR, Talk</span><span class="date">June 2019</span></div></div>
+  </section>
+
+  <section class="sec" id="teaching">
+    <h2>Teaching</h2>
+    <div class="entry">
+      <div class="line"><span class="lead"><b>Guest Lectures</b>, Univ. Colorado</span><span class="date">Fall 2024</span></div>
+      <div class="sub">PHIL 2800: Ethical Puzzles and Moral Conflicts</div>
+    </div>
+    <div class="entry">
+      <div class="line"><span class="lead"><b>Professional Development Teaching Assistant</b>, IBM Research</span><span class="date">Fall 2019</span></div>
+      <div class="sub">IBM Research Upskilling Class on Deep Learning</div>
+      <div class="sub">Designed and gave mini-lectures; held office hours</div>
+    </div>
+    <div class="entry">
+      <div class="line"><span class="lead"><b>Lead Graduate Assistant Instructor</b>, Indiana Univ.</span><span class="date">Fall 2018; Spring 2019</span></div>
+      <div class="sub">CS C343: Introduction to Data Structures &amp; Algorithms</div>
+      <div class="sub">Designed lab activities, homework assignments, test questions, in-class activities; led lab sections; held office hours and study sessions; evaluated projects, homework and tests; managed a staff of 12 teaching assistants</div>
+    </div>
+    <div class="entry">
+      <div class="line"><span class="lead"><b>Undergraduate Teaching Assistant</b>, Indiana Univ.</span><span class="date">Spring 2018</span></div>
+      <div class="sub">CS C343: Introduction to Data Structures &amp; Algorithms</div>
+      <div class="sub">Led lab sections; held office hours and study sessions; evaluated projects, homework and tests</div>
+    </div>
+    <div class="entry">
+      <div class="line"><span class="lead"><b>Undergraduate Teaching Assistant</b>, Indiana Univ.</span><span class="date">Fall 2016 &ndash; Fall 2017</span></div>
+      <div class="sub">CS C241: Discrete Mathematics for Computer Science</div>
+      <div class="sub">Led lab sections; held office hours and study sessions; evaluated projects, homework and tests</div>
+    </div>
+  </section>
+
+  <section class="sec" id="mentoring">
+    <h2>Research Mentoring</h2>
+    <div class="entry">
+      <div class="line"><span class="lead"><b>Joanna Mendy</b></span><span class="date">2022 &ndash; 2023</span></div>
+      <div class="sub">Univ. Colorado Sociology &amp; Political Science undergraduate student (2022); Information Science graduate student (2023)</div>
+      <div class="sub">Project: Gendered devaluation underlies faculty retention</div>
+    </div>
+    <div class="entry">
+      <div class="line"><span class="lead"><b>Maria Martinez</b></span><span class="date">Summer 2022</span></div>
+      <div class="sub">Univ. Colorado School of Education graduate student</div>
+      <div class="sub">Project: Gendered devaluation underlies faculty retention</div>
+    </div>
+    <div class="entry">
+      <div class="line"><span class="lead"><b>Swag Das</b></span><span class="date">Spring 2022</span></div>
+      <div class="sub">Univ. Colorado Computer Science undergraduate student</div>
+      <div class="sub">Project: Beliefs about why women leave academia</div>
+    </div>
+    <div class="entry">
+      <div class="line"><span class="lead"><b>Jordan Roos</b></span><span class="date">Spring 2022</span></div>
+      <div class="sub">Univ. Colorado Biomedical Engineering undergraduate student</div>
+      <div class="sub">Project: Academic fields with fewer women are more stressful</div>
+    </div>
+  </section>
+
+  <section class="sec" id="service">
+    <h2>Service</h2>
+    <div class="entry"><div class="line"><span class="lead">Graduate &amp; Family Housing Resident Council Secretary &amp; Treasurer</span><span class="date">2024 &ndash; 2025</span></div></div>
+    <div class="entry"><div class="line"><span class="lead">CU Computer Science PhD Application Mentor</span><span class="date">2020 &ndash; 2025</span></div></div>
+    <div class="entry"><div class="line"><span class="lead">You&rsquo;re @ CU Research Program Graduate Student Mentor</span><span class="date">2022</span></div></div>
+    <div class="entry"><div class="line"><span class="lead">McNair Scholars Graduate Student Mentor</span><span class="date">2021 &ndash; 2022</span></div></div>
+    <div class="entry"><div class="line"><span class="lead">CU Engineering Mentor for Underrepresented First-Year Undergraduates</span><span class="date">2020 &ndash; 2022</span></div></div>
+    <div class="entry"><div class="line"><span class="lead">Lead Ambassador, IU Luddy School of Informatics, Computing &amp; Engineering</span><span class="date">2016 &ndash; 2019</span></div></div>
+    <div class="entry"><div class="line"><span class="lead">Software Development Intern, Serve IT Nonprofit Technology Clinic</span><span class="date">2016 &ndash; 2017</span></div></div>
+    <p class="reviewer entry"><b>Reviewer for:</b> Behaviour Research and Therapy, eLife, The Lancet Regional Health &ndash; Americas,
+      Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies, Research Policy,
+      Social Policy &amp; Administration</p>
+  </section>
+
+  <section class="sec" id="professional">
+    <h2>Additional Employment</h2>
+    <div class="entry">
+      <div class="line"><span class="lead"><b>Research Assistant</b></span><span class="date">Sep 2017 &ndash; June 2019</span></div>
+      <div class="sub">Indiana University Computer Vision Lab (Bloomington, IN)</div>
+    </div>
+    <div class="entry">
+      <div class="line"><span class="lead"><b>Research Intern</b></span><span class="date">Summer 2018</span></div>
+      <div class="sub">IBM Research, <i>Artificial Intelligence Hardware Group</i> (San Jose, CA)</div>
+    </div>
+    <div class="entry">
+      <div class="line"><span class="lead"><b>Research Intern</b></span><span class="date">Summer 2017</span></div>
+      <div class="sub">MIT Lincoln Laboratory, <i>Machine Learning Group</i> (Boston, MA)</div>
+    </div>
+    <div class="entry">
+      <div class="line"><span class="lead"><b>Research Assistant</b></span><span class="date">Aug 2016 &ndash; Sep 2017</span></div>
+      <div class="sub">Indiana University Kelley School of Business (Bloomington, IN)</div>
+    </div>
+    <div class="entry">
+      <div class="line"><span class="lead"><b>Research Assistant</b></span><span class="date">Summer 2016</span></div>
+      <div class="sub">NSF Research Experience for Undergraduates (Bloomington, IN)</div>
+    </div>
+
+    <h3>Professional Activities</h3>
+    <div class="entry">
+      <div class="line"><span class="lead">Atlanta Academy on Science and Innovation Policy at Georgia Tech</span><span class="date">2024</span></div>
+      <div class="sub">Selected participant. Funded by Georgia Tech School of Public Policy.</div>
+    </div>
+    <div class="entry">
+      <div class="line"><span class="lead">Summer Institute in Computational Social Science at Duke University</span><span class="date">2022</span></div>
+      <div class="sub">Selected participant. Funded by the Russell Sage Foundation.</div>
+    </div>
+    <div class="entry">
+      <div class="line"><span class="lead">Grad Cohort for Women Workshop, Computing Research Association (CRA)</span><span class="date">2021</span></div>
+      <div class="sub">Selected participant. (Remote)</div>
+    </div>
+  </section>
+
+  <p class="empty hidden" id="empty">No entries match that search.</p>
+
+  </main>
+
+  <footer class="foot">
+    <span>Katie Spoon &middot; CV</span>
+    <span class="right">Updated October 2026</span>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  var q = document.getElementById("q");
+  var hits = document.getElementById("hits");
+  var empty = document.getElementById("empty");
+  var entries = Array.prototype.slice.call(document.querySelectorAll("#cv .entry"));
+  var sections = Array.prototype.slice.call(document.querySelectorAll("#cv .sec"));
+
+  // remember each entry's original markup so highlighting can be undone cleanly
+  entries.forEach(function(el){ el.dataset.html = el.innerHTML; });
+
+  // fix publication numbers now, so filtering cannot renumber them
+  document.querySelectorAll(".pubs .entry").forEach(function(el, i){ el.dataset.n = i + 1; });
+
+  // An entry is also findable by the headings above it: a presentation listed under
+  // "Towards detecting dyslexia..." should match "dyslexia" even though its own line
+  // only names the venue.
+  entries.forEach(function(el){
+    var ctx = [], sec = el.closest(".sec");
+    var h2 = sec && sec.querySelector("h2");
+    if (h2) ctx.push(h2.textContent);
+    var prev = el.previousElementSibling;
+    while (prev){
+      if (prev.tagName === "H3" || prev.classList.contains("proj")){
+        ctx.push(prev.textContent);
+        if (prev.tagName === "H3") break;
+      }
+      prev = prev.previousElementSibling;
+    }
+    el.dataset.ctx = ctx.join(" ");
+  });
+
+  function esc(s){ return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"); }
+
+  function highlight(el, re){
+    var walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null);
+    var texts = [], n;
+    while ((n = walker.nextNode())) texts.push(n);
+    texts.forEach(function(node){
+      if (!re.test(node.nodeValue)) return;
+      re.lastIndex = 0;
+      var frag = document.createDocumentFragment();
+      var last = 0, m;
+      while ((m = re.exec(node.nodeValue))){
+        frag.appendChild(document.createTextNode(node.nodeValue.slice(last, m.index)));
+        var mk = document.createElement("mark");
+        mk.textContent = m[0];
+        frag.appendChild(mk);
+        last = m.index + m[0].length;
+        if (m.index === re.lastIndex) re.lastIndex++;
+      }
+      frag.appendChild(document.createTextNode(node.nodeValue.slice(last)));
+      node.parentNode.replaceChild(frag, node);
+    });
+  }
+
+  var pubs = document.querySelector(".pubs");
+
+  function run(){
+    var term = q.value.trim();
+    entries.forEach(function(el){ el.innerHTML = el.dataset.html; });
+    // hidden entries stop incrementing the CSS counter, so freeze the numbers while filtering
+    if (pubs) pubs.classList.toggle("filtering", !!term);
+
+    if (!term){
+      entries.forEach(function(el){ el.classList.remove("hidden"); });
+      sections.forEach(function(s){
+        s.classList.remove("hidden");
+        s.querySelectorAll("h3, .proj").forEach(function(h){ h.classList.remove("hidden"); });
+      });
+      hits.hidden = true;
+      empty.classList.add("hidden");
+      return;
+    }
+
+    var re = new RegExp(esc(term), "gi");
+    var found = 0;
+    entries.forEach(function(el){
+      var own = re.test(el.textContent);
+      re.lastIndex = 0;
+      var viaHeading = !own && re.test(el.dataset.ctx || "");
+      re.lastIndex = 0;
+      var match = own || viaHeading;
+      el.classList.toggle("hidden", !match);
+      if (match){
+        found++;
+        if (own){ highlight(el, re); re.lastIndex = 0; }
+      }
+    });
+
+    // hide any section or sub-heading left with nothing under it
+    sections.forEach(function(s){
+      var live = s.querySelectorAll(".entry:not(.hidden)").length;
+      s.classList.toggle("hidden", live === 0);
+    });
+    document.querySelectorAll("#cv h3, #cv .proj").forEach(function(h){
+      var any = false, el = h.nextElementSibling;
+      while (el && !/^(H3)$/.test(el.tagName) && !el.classList.contains("proj")){
+        if (el.classList.contains("entry") && !el.classList.contains("hidden")) { any = true; break; }
+        el = el.nextElementSibling;
+      }
+      h.classList.toggle("hidden", !any);
+    });
+
+    hits.hidden = false;
+    hits.textContent = found + (found === 1 ? " entry" : " entries");
+    empty.classList.toggle("hidden", found > 0);
+  }
+
+  q.addEventListener("input", run);
+  q.addEventListener("keydown", function(e){ if (e.key === "Escape"){ q.value = ""; run(); } });
+
+  document.getElementById("print").addEventListener("click", function(){ window.print(); });
+
+  // "/" focuses search, the way a docs site would
+  document.addEventListener("keydown", function(e){
+    if (e.key === "/" && document.activeElement !== q){ e.preventDefault(); q.focus(); }
+  });
+})();
+</script>
+</body>
+</html>
