@@ -1,0 +1,915 @@
+---
+permalink: /
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Katie Spoon</title>
+<meta name="description" content="Katie Spoon studies how inequality accumulates across education, careers and health, at the scale of whole populations. Data Science Fellow and New Map of Life Fellow at Stanford University.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* One column. An identity band that scrolls away under a condensed bar, then five
+   collapsible research eras, then teaching and service behind a tab. Type is deliberately
+   plain: one sans for everything, a mono only for labels, flat cards with no shadow. */
+:root{
+  --bg:#f3f5f7; --surface:#ffffff; --surface-2:#eceff3;
+  --ink:#15181e; --ink-soft:#575e6b; --ink-faint:#8b93a1;
+  --rule:#d7dce3; --shadow:18 24 38;
+  --era-health:#0f7b6c; --era-census:#1f6f8b; --era-careers:#44489c; --era-ibm:#8a5526; --era-dys:#993a66;
+  --accent:#44489c;
+  --font-body:"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+  --font-data:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#111318; --surface:#1a1d24; --surface-2:#23272f;
+  --ink:#e9ebef; --ink-soft:#a0a8b6; --ink-faint:#737b8a;
+  --rule:#2c313b; --shadow:0 0 0;
+  --era-health:#3fb6a2; --era-census:#5fb3d4; --era-careers:#8b93ef; --era-ibm:#d4a06b; --era-dys:#e384ae;
+  --accent:#8b93ef; color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --bg:#111318; --surface:#1a1d24; --surface-2:#23272f;
+  --ink:#e9ebef; --ink-soft:#a0a8b6; --ink-faint:#737b8a;
+  --rule:#2c313b; --shadow:0 0 0;
+  --era-health:#3fb6a2; --era-census:#5fb3d4; --era-careers:#8b93ef; --era-ibm:#d4a06b; --era-dys:#e384ae;
+  --accent:#8b93ef; color-scheme:dark;
+}
+
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:14.5px;line-height:1.6;
+  -webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{margin:0;text-wrap:balance}
+p{margin:0}
+a{color:inherit}
+button{font:inherit}
+button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+img{max-width:100%}
+/* Every collapsible element below sets its own display, which would otherwise beat the
+   hidden attribute's UA rule and leave collapsed panels visible. */
+[hidden]{display:none!important}
+
+.band{max-width:760px;margin:0 auto;width:100%;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.band.wide{max-width:920px}
+.page{display:grid;gap:40px;padding-block:36px 56px}
+
+/* ---- condensed bar ---- */
+.stuck{position:sticky;top:0;z-index:9;background:color-mix(in srgb,var(--bg) 90%,transparent);
+  backdrop-filter:blur(10px);border-bottom:1px solid transparent;opacity:0;translate:0 -6px;pointer-events:none;
+  transition:opacity .22s ease,translate .22s ease,border-color .22s}
+.stuck.on{opacity:1;translate:0;pointer-events:auto;border-bottom-color:var(--rule)}
+.stuck .in{max-width:920px;margin:0 auto;padding-block:9px;display:flex;gap:14px;align-items:center;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.stuck .nm{font-size:16px;font-weight:600;letter-spacing:-.015em;margin-right:auto;white-space:nowrap}
+.stuck .nm a{text-decoration:none}
+
+/* ---- icon links ---- */
+.icons{display:flex;gap:2px;align-items:center}
+.icons a{position:relative;display:grid;place-items:center;width:32px;height:32px;border-radius:2px;
+  color:var(--ink-soft);text-decoration:none;transition:color .15s,background .15s}
+.icons a:hover{color:var(--accent);background:color-mix(in srgb,var(--accent) 9%,transparent)}
+.icons svg{width:16px;height:16px;display:block;fill:none;stroke:currentColor;stroke-width:1.7;
+  stroke-linecap:round;stroke-linejoin:round}
+.icons svg.solid{fill:currentColor;stroke:none}
+.icons a::after{content:attr(data-tip);position:absolute;top:calc(100% + 6px);left:50%;translate:-50% 0;
+  background:var(--ink);color:var(--bg);font-size:11px;font-family:var(--font-data);padding:4px 8px;
+  border-radius:2px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .15s;z-index:3}
+.icons a:hover::after,.icons a:focus-visible::after{opacity:1}
+
+/* ---- identity ---- */
+.ident{display:grid;grid-template-columns:auto 1fr;gap:0 24px;align-items:start}
+.ident img{width:96px;height:96px;border-radius:2px;object-fit:cover;display:block}
+.ident h1{font-size:clamp(23px,3.4vw,28px);font-weight:600;letter-spacing:-.018em;line-height:1.15}
+.ident .what{font-size:15.5px;line-height:1.5;margin-top:9px;max-width:46ch}
+.ident .where{font-size:12.5px;color:var(--ink-soft);margin-top:7px}
+.ident .short-bio{font-size:13.5px;line-height:1.6;color:var(--ink-soft);margin-top:12px;max-width:62ch}
+.ident .short-bio a,.linkrow a{color:var(--accent);text-decoration:none;
+  border-bottom:1px solid color-mix(in srgb,var(--accent) 28%,transparent)}
+.ident .short-bio a:hover,.linkrow a:hover{border-bottom-color:var(--accent)}
+.linkrow{display:flex;flex-wrap:wrap;gap:4px 2px;margin-top:12px}
+.linkrow a{display:inline-flex;align-items:center;gap:7px;font-size:13px;text-decoration:none;color:var(--ink-soft);
+  padding:5px 10px 5px 8px;border-radius:2px;border-bottom:none;transition:.15s}
+.linkrow a:hover{color:var(--accent);background:color-mix(in srgb,var(--accent) 9%,transparent);border-bottom:none}
+.linkrow svg{width:15px;height:15px;flex:0 0 auto;fill:none;stroke:currentColor;stroke-width:1.7;
+  stroke-linecap:round;stroke-linejoin:round}
+.linkrow svg.solid{fill:currentColor;stroke:none}
+
+/* ---- page tabs ---- */
+.pagenav{display:flex;gap:4px;border-bottom:1px solid var(--rule)}
+.pagenav button{position:relative;background:none;border:none;cursor:pointer;padding:9px 2px 12px;margin-right:24px;
+  font-size:15.5px;font-weight:600;letter-spacing:-.01em;color:var(--ink-faint);transition:color .18s}
+.pagenav button:hover{color:var(--ink-soft)}
+.pagenav button[aria-selected="true"]{color:var(--ink)}
+.pagenav button::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--accent);
+  scale:0 1;transform-origin:left;transition:scale .22s ease}
+.pagenav button[aria-selected="true"]::after{scale:1 1}
+.pagenav .cv{margin-left:auto;margin-right:0;font-size:14px;align-self:center;text-decoration:none;
+  color:var(--ink-faint);display:flex;align-items:center;gap:6px}
+.pagenav .cv:hover{color:var(--accent)}
+.pagenav .cv svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.views{display:grid}
+.view{grid-area:1/1;display:grid;gap:40px;transition:opacity .26s ease,translate .26s ease}
+.view[hidden]{display:none}
+.view.enter-right{opacity:0;translate:24px 0}
+.view.enter-left{opacity:0;translate:-24px 0}
+
+/* ---- section furniture ---- */
+.sec-head{display:flex;align-items:baseline;gap:14px;border-bottom:1px solid var(--rule);padding-bottom:8px;margin-bottom:18px}
+.sec-head h2{font-family:var(--font-data);font-size:10.5px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-faint)}
+.sec-head .aside{margin-left:auto;font-size:12px;color:var(--ink-faint);text-align:right}
+.sec-head .aside a{color:var(--accent);text-decoration:none}
+
+/* ---- tag filter ---- */
+.tagbar{margin-bottom:18px;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.tagbar .fam{font-family:var(--font-data);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint);margin-right:4px}
+.tag{cursor:pointer;font-size:12px;padding:3.5px 10px;border:1px solid var(--rule);background:transparent;color:var(--ink-soft);transition:.15s}
+.tag:hover{color:var(--ink);border-color:var(--ink-faint)}
+.tag[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.tag.clear{border-style:dashed;color:var(--ink-faint)}
+
+/* ---- timeline ---- */
+.timeline{position:relative}
+.era{position:relative;border-top:1px solid var(--rule)}
+.era:last-child{border-bottom:1px solid var(--rule)}
+.era.dim{opacity:.42}
+.era-toggle{width:100%;display:grid;grid-template-columns:24px 1fr auto;gap:0 14px;align-items:center;
+  background:none;border:none;cursor:pointer;text-align:left;padding:13px 0;color:inherit;transition:background .15s}
+.era-toggle:hover{background:color-mix(in srgb,var(--era) 6%,transparent)}
+.node{justify-self:center;width:11px;height:11px;border-radius:50%;background:var(--bg);border:2.5px solid var(--era);
+  position:relative;z-index:1;transition:background .2s}
+.era[data-open="true"] .node{background:var(--era)}
+.era[data-concurrent="true"] .node{width:9px;height:9px;rotate:45deg;border-radius:1px}
+.rail{position:absolute;left:11.5px;top:0;bottom:0;width:1px;background:var(--rule);z-index:0}
+.era:first-child .rail{top:50%}
+.era:last-child .rail{bottom:50%}
+.era-id{min-width:0}
+.era-id .nm{font-size:14.5px;font-weight:600;line-height:1.3;letter-spacing:-.008em}
+.era-id .sub{font-size:12px;color:var(--ink-soft);margin-top:1px}
+.era-id .sub .yrs{font-family:var(--font-data);color:var(--era)}
+.era-id .sub .conc{color:var(--ink-faint);font-style:italic}
+.era-meta{display:flex;align-items:center;gap:12px;color:var(--ink-faint)}
+.era-meta .ct{font-family:var(--font-data);font-size:11px;white-space:nowrap}
+.era-meta .dots{display:flex;gap:5px}
+.era-meta .dots i{width:7px;height:7px;border-radius:50%;box-shadow:inset 0 0 0 1.5px var(--era);opacity:.45;transition:.2s}
+.era-meta .dots i.on{background:var(--era);opacity:1}
+.chev{width:10px;height:10px;border-right:1.6px solid currentColor;border-bottom:1.6px solid currentColor;
+  rotate:45deg;translate:0 -2px;transition:.25s}
+.era[data-open="true"] .chev{rotate:225deg;translate:0 2px}
+.era-panel{padding:0 0 22px 38px;display:grid;gap:15px}
+.era-intro{font-size:14px;line-height:1.6;max-width:62ch;padding-left:14px;border-left:2px solid var(--era);color:var(--ink-soft)}
+.era-figs{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:15px}
+
+/* ---- figure cards ---- */
+.fig{display:flex;flex-direction:column;text-decoration:none;background:var(--surface);border:1px solid var(--rule);
+  overflow:hidden;position:relative;transition:transform .28s cubic-bezier(.2,.7,.3,1),border-color .2s}
+.fig:hover,.fig:focus-visible{transform:translateY(-4px);border-color:var(--era)}
+.fig .canvas{background:var(--surface-2);aspect-ratio:16/10;display:block;border-bottom:1px solid var(--rule)}
+.fig .canvas svg,.fig .canvas img{width:100%;height:100%;display:block;object-fit:cover}
+.fig .meta{padding:11px 12px 12px;display:flex;flex-direction:column;gap:5px;flex:1}
+.fig .venue{font-family:var(--font-data);font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--era);
+  display:flex;gap:8px;align-items:baseline}
+.fig .venue .yr{color:var(--ink-faint);margin-left:auto}
+.fig h4{font-size:13px;font-weight:600;line-height:1.35}
+.fig .takeaway{color:var(--ink-soft);font-size:12px;line-height:1.5}
+.fig .chips{display:flex;flex-wrap:wrap;gap:4px;margin-top:auto;padding-top:5px}
+.fig .chip{font-size:10px;padding:2px 7px;background:color-mix(in srgb,var(--era) 12%,transparent);color:var(--era);white-space:nowrap}
+.fig .chip.hit{outline:1px solid var(--era)}
+.fig .access{position:absolute;top:8px;right:8px;font-family:var(--font-data);font-size:9px;letter-spacing:.08em;
+  text-transform:uppercase;padding:3px 7px;background:var(--surface);border:1px solid var(--rule);color:var(--ink-faint)}
+.fig .access.open{color:var(--era);border-color:color-mix(in srgb,var(--era) 40%,var(--rule))}
+.era-empty{font-size:12.5px;color:var(--ink-faint)}
+
+/* ---- press ---- */
+.outlets{display:flex;flex-wrap:wrap;gap:6px 8px}
+.outlets a{font-size:13px;text-decoration:none;color:var(--ink);background:var(--surface);border:1px solid var(--rule);
+  padding:4px 11px;transition:.15s;white-space:nowrap}
+.outlets a:hover{border-color:var(--accent);color:var(--accent)}
+.outlets a.dim{opacity:.32}
+.press-row{display:grid;grid-template-columns:78px 1fr;gap:0 16px;align-items:baseline}
+.press-row + .press-row{margin-top:16px;padding-top:14px;border-top:1px solid var(--rule)}
+.press-row .lbl{font-family:var(--font-data);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);padding-top:4px}
+.press-row .about{font-size:12px;color:var(--ink-faint);align-self:center}
+
+/* ---- lists ---- */
+.rows{display:grid}
+.row3{display:grid;grid-template-columns:52px 1fr auto;gap:0 16px;padding:8px 0;border-top:1px solid var(--rule);align-items:baseline}
+.row3:first-child{border-top:none}
+.row3 .yr{font-family:var(--font-data);font-size:11.5px;color:var(--ink-faint)}
+.row3 .nm{font-size:13.5px;min-width:0}
+.row3 .loc{font-size:12px;color:var(--ink-faint);white-space:nowrap}
+#service .row3{grid-template-columns:76px 1fr auto}
+.slides{font-family:var(--font-data);font-size:9.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--accent);
+  text-decoration:none;border:1px solid color-mix(in srgb,var(--accent) 35%,var(--rule));padding:2px 6px;margin-left:8px;white-space:nowrap}
+.item{display:grid;grid-template-columns:100px 1fr;gap:0 16px;padding:11px 0;border-top:1px solid var(--rule)}
+.item:first-child{border-top:none}
+.item .when{font-family:var(--font-data);font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-faint);padding-top:4px}
+.item .what{font-size:13.5px;line-height:1.55;min-width:0}
+.item .what a{color:var(--accent);text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 30%,transparent)}
+.item .what a:hover{border-bottom-color:var(--accent)}
+.trow{display:grid;grid-template-columns:124px 1fr;gap:0 16px;padding:10px 0;border-top:1px solid var(--rule)}
+.trow:first-child{border-top:none}
+.trow .role{font-family:var(--font-data);font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-faint);padding-top:4px}
+.trow .body{min-width:0;font-size:13.5px;line-height:1.55}
+.trow .body .sub{display:block;font-size:12px;color:var(--ink-faint);margin-top:2px}
+.more{justify-self:start;margin-top:12px;background:transparent;border:1px solid var(--rule);
+  padding:5px 14px;font-size:12.5px;color:var(--ink-soft);cursor:pointer;transition:.15s}
+.more:hover{color:var(--ink);border-color:var(--ink-faint)}
+.reviewing{margin-top:16px;padding-top:13px;border-top:1px solid var(--rule);font-size:12.5px;color:var(--ink-soft);line-height:1.6}
+.reviewing .lbl{font-family:var(--font-data);font-size:10px;letter-spacing:.11em;text-transform:uppercase;
+  color:var(--ink-faint);display:block;margin-bottom:4px}
+
+/* ---- footer ---- */
+.foot{border-top:1px solid var(--rule);padding-top:16px;display:flex;flex-wrap:wrap;gap:10px 20px;align-items:center;
+  font-size:12.5px;color:var(--ink-faint)}
+.foot .mail{font-family:var(--font-data);color:var(--ink)}
+.foot .upd{margin-left:auto}
+
+@media (max-width:620px){
+  .page{gap:32px}
+  .ident{grid-template-columns:1fr;gap:14px}
+  .ident img{width:80px;height:80px}
+  .era-panel{padding-left:24px}
+  .era-figs{grid-template-columns:1fr}
+  .era-meta .ct{display:none}
+  .press-row,.trow{grid-template-columns:1fr;gap:6px}
+  .trow .role{padding-top:0}
+  .row3,#service .row3{grid-template-columns:44px 1fr;gap:0 12px}
+  .row3 .loc{grid-column:2;text-align:left;font-size:11.5px}
+  .item{grid-template-columns:1fr;gap:3px}
+  .item .when{padding-top:0}
+  .foot .upd{margin-left:0;flex-basis:100%}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5"/></symbol>
+  <symbol id="i-scholar" viewBox="0 0 24 24"><path d="M12 4 2.5 9.2 12 14.4l9.5-5.2z"/><path d="M6.5 11.5v4.3c0 1.7 2.5 3.1 5.5 3.1s5.5-1.4 5.5-3.1v-4.3"/></symbol>
+  <symbol id="i-cv" viewBox="0 0 24 24"><path d="M6 2.5h8l4.5 4.5v14.5H6z"/><path d="M14 2.5V7h4.5"/><path d="M9 12h6M9 15.5h6M9 18.5h3.5"/></symbol>
+  <symbol id="i-bsky" viewBox="0 0 24 24" class="solid"><path d="M6.1 4.6C8.5 6.4 11 10 12 12c1-2 3.5-5.6 5.9-7.4 1.7-1.3 4.4-2.2 4.4.9 0 .6-.35 5.2-.56 5.9-.72 2.6-3.4 3.3-5.75 2.9 4.12.7 5.17 3 2.9 5.3-4.3 4.4-6.2-1.1-6.7-2.5-.1-.26-.14-.38-.14-.28 0-.1-.05.02-.14.28-.5 1.4-2.4 6.9-6.7 2.5-2.27-2.3-1.22-4.6 2.9-5.3-2.35.4-5.03-.3-5.75-2.9C1.95 10.7 1.6 6.1 1.6 5.5c0-3.1 2.7-2.2 4.4-.9z" transform="translate(.4 .6) scale(.96)"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24" class="solid"><path d="M17.2 3h3.3l-7.2 8.2L21.8 21h-6.6l-5.2-6.4L4 21H.7l7.7-8.8L.5 3h6.8l4.7 5.9zm-1.2 16h1.8L6.1 4.9H4.2z"/></symbol>
+
+  <symbol id="f-traj" viewBox="0 0 160 100">
+    <g stroke="currentColor" stroke-opacity=".16" stroke-width="1"><path d="M24 26H146M24 48H146M24 70H146"/></g>
+    <path d="M24 84V18M24 84H146" stroke="currentColor" stroke-opacity=".4" stroke-width="1"/>
+    <path d="M24 72c22-4 32-18 48-20s26 12 42 6 18-18 32-22" fill="none" stroke="var(--era)" stroke-width="2.4"/>
+    <path d="M24 76c22 2 34-6 50-4s24 16 40 12 20-10 32-12" fill="none" stroke="var(--era)" stroke-opacity=".42" stroke-width="2.4"/>
+    <g fill="var(--era)"><circle cx="72" cy="52" r="2.8"/><circle cx="114" cy="58" r="2.8" fill-opacity=".5"/></g>
+  </symbol>
+  <symbol id="f-survey" viewBox="0 0 160 100">
+    <rect x="30" y="16" width="100" height="68" rx="2" fill="none" stroke="var(--era)" stroke-opacity=".45" stroke-width="1.5"/>
+    <g fill="var(--era)">
+      <rect x="42" y="30" width="7" height="7" rx="1.5" fill-opacity=".85"/><rect x="56" y="31" width="44" height="5" rx="2.5" fill-opacity=".3"/>
+      <rect x="42" y="46" width="7" height="7" rx="1.5" fill-opacity=".3"/><rect x="56" y="47" width="56" height="5" rx="2.5" fill-opacity=".3"/>
+      <rect x="42" y="62" width="7" height="7" rx="1.5" fill-opacity=".85"/><rect x="56" y="63" width="34" height="5" rx="2.5" fill-opacity=".3"/>
+    </g>
+  </symbol>
+  <symbol id="f-survival" viewBox="0 0 160 100">
+    <g stroke="currentColor" stroke-opacity=".16" stroke-width="1"><path d="M22 20H148M22 42H148M22 64H148M22 82H148"/></g>
+    <path d="M22 82V20M22 82H148" stroke="currentColor" stroke-opacity=".4" stroke-width="1"/>
+    <path d="M22 26h18v6h16v8h20v9h22v10h26v9h24" fill="none" stroke="var(--era)" stroke-width="2.2" stroke-linejoin="round"/>
+    <path d="M22 26h18v10h16v12h20v12h22v12h26v10h24" fill="none" stroke="var(--era)" stroke-width="2.2" stroke-opacity=".45" stroke-dasharray="4 3" stroke-linejoin="round"/>
+    <circle cx="138" cy="63" r="2.6" fill="var(--era)"/><circle cx="138" cy="82" r="2.6" fill="var(--era)" fill-opacity=".45"/>
+  </symbol>
+  <symbol id="f-flow" viewBox="0 0 160 100">
+    <rect x="22" y="18" width="13" height="64" rx="1.5" fill="var(--era)" fill-opacity=".8"/>
+    <rect x="125" y="18" width="13" height="28" rx="1.5" fill="var(--era)" fill-opacity=".8"/>
+    <rect x="125" y="54" width="13" height="28" rx="1.5" fill="var(--era)" fill-opacity=".35"/>
+    <path d="M35 22c34 0 56 0 90 0v22c-36 0-56-6-90-6z" fill="var(--era)" fill-opacity=".3"/>
+    <path d="M35 50c34 0 56 6 90 6v22c-36 0-56-10-90-10z" fill="var(--era)" fill-opacity=".16"/>
+  </symbol>
+  <symbol id="f-map" viewBox="0 0 160 100">
+    <g fill="var(--era)">
+      <circle cx="34" cy="34" r="3.2" fill-opacity=".25"/><circle cx="50" cy="28" r="5.4" fill-opacity=".8"/>
+      <circle cx="64" cy="40" r="2.6" fill-opacity=".3"/><circle cx="78" cy="30" r="7" fill-opacity=".9"/>
+      <circle cx="92" cy="44" r="3.4" fill-opacity=".35"/><circle cx="108" cy="33" r="4.6" fill-opacity=".6"/>
+      <circle cx="124" cy="43" r="2.4" fill-opacity=".25"/><circle cx="42" cy="52" r="2.8" fill-opacity=".3"/>
+      <circle cx="60" cy="60" r="6.2" fill-opacity=".85"/><circle cx="76" cy="54" r="2.6" fill-opacity=".3"/>
+      <circle cx="94" cy="64" r="4.2" fill-opacity=".55"/><circle cx="112" cy="58" r="2.6" fill-opacity=".28"/>
+      <circle cx="128" cy="67" r="3.6" fill-opacity=".4"/><circle cx="70" cy="78" r="3.2" fill-opacity=".35"/>
+    </g>
+    <path d="M22 86H138" stroke="currentColor" stroke-opacity=".3" stroke-width="1"/>
+  </symbol>
+  <symbol id="f-prestige" viewBox="0 0 160 100">
+    <g fill="var(--era)">
+      <circle cx="80" cy="22" r="5.5" fill-opacity=".9"/>
+      <circle cx="58" cy="46" r="4.2" fill-opacity=".6"/><circle cx="102" cy="46" r="4.2" fill-opacity=".6"/>
+      <circle cx="40" cy="70" r="3" fill-opacity=".35"/><circle cx="66" cy="70" r="3" fill-opacity=".35"/>
+      <circle cx="94" cy="70" r="3" fill-opacity=".35"/><circle cx="120" cy="70" r="3" fill-opacity=".35"/>
+    </g>
+    <g stroke="var(--era)" stroke-opacity=".4" stroke-width="1.4" fill="none">
+      <path d="M80 27.5 58 41.8M80 27.5l22 14.3M58 50.2 40 67M58 50.2 66 67M102 50.2 94 67M102 50.2l18 16.8"/>
+    </g>
+  </symbol>
+  <symbol id="f-stack" viewBox="0 0 160 100">
+    <g fill="var(--era)">
+      <rect x="30" y="66" width="100" height="14" rx="2" fill-opacity=".8"/>
+      <rect x="40" y="48" width="80" height="14" rx="2" fill-opacity=".55"/>
+      <rect x="50" y="30" width="60" height="14" rx="2" fill-opacity=".35"/>
+      <rect x="60" y="16" width="40" height="10" rx="2" fill-opacity=".22"/>
+    </g>
+  </symbol>
+  <symbol id="f-lines" viewBox="0 0 160 100">
+    <g stroke="currentColor" stroke-opacity=".16" stroke-width="1"><path d="M24 24H146M24 44H146M24 64H146"/></g>
+    <path d="M24 82V18M24 82H146" stroke="currentColor" stroke-opacity=".4" stroke-width="1"/>
+    <path d="M24 30C52 31 74 34 96 44s28 26 50 34" fill="none" stroke="var(--era)" stroke-width="2.2"/>
+    <path d="M24 34C52 36 76 44 98 58s26 20 48 24" fill="none" stroke="var(--era)" stroke-opacity=".45" stroke-width="2.2" stroke-dasharray="4 3"/>
+  </symbol>
+  <symbol id="f-crossbar" viewBox="0 0 160 100">
+    <g stroke="var(--era)" stroke-opacity=".3" stroke-width="1.4">
+      <path d="M34 22H132M34 36H132M34 50H132M34 64H132M34 78H132"/>
+      <path d="M48 14V86M68 14V86M88 14V86M108 14V86M128 14V86"/>
+    </g>
+    <g fill="var(--era)">
+      <circle cx="48" cy="22" r="3.4" fill-opacity=".9"/><circle cx="88" cy="36" r="2.4" fill-opacity=".4"/>
+      <circle cx="68" cy="50" r="4" fill-opacity=".8"/><circle cx="128" cy="64" r="3" fill-opacity=".6"/>
+      <circle cx="108" cy="64" r="3.6" fill-opacity=".75"/><circle cx="48" cy="78" r="2.2" fill-opacity=".35"/>
+    </g>
+  </symbol>
+  <symbol id="f-script" viewBox="0 0 160 100">
+    <g stroke="currentColor" stroke-opacity=".18" stroke-width="1"><path d="M20 34H140M20 56H140M20 78H140"/></g>
+    <path d="M26 56c6-16 11-14 14 0s9 15 15 2 10-12 15 2 9 13 15 0 11-14 16 1 10 12 15-2" fill="none"
+      stroke="var(--era)" stroke-width="2.3" stroke-linecap="round"/>
+    <rect x="52" y="40" width="30" height="30" rx="2" fill="none" stroke="var(--era)" stroke-opacity=".55" stroke-width="1.4" stroke-dasharray="3 2"/>
+  </symbol>
+</defs></svg>
+
+<div class="stuck" id="stuck"><div class="in">
+  <span class="nm"><a href="#top">Katie Spoon</a></span>
+  <span class="icons">
+    <a href="mailto:kspoon@stanford.edu" data-tip="kspoon@stanford.edu" aria-label="Email"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-mail"/></svg></a>
+    <a href="https://scholar.google.com/citations?hl=en&amp;user=bHf0QxEAAAAJ" data-tip="Google Scholar" aria-label="Google Scholar"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-scholar"/></svg></a>
+    <a href="{{ "/cv/" | relative_url }}" data-tip="CV" aria-label="CV"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-cv"/></svg></a>
+    <a href="https://bsky.app/profile/kspoon.bsky.social" data-tip="Bluesky" aria-label="Bluesky"><svg class="solid" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-bsky"/></svg></a>
+    <a href="https://twitter.com/thekatiespoon" data-tip="X" aria-label="X"><svg class="solid" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-x"/></svg></a>
+  </span>
+</div></div>
+
+<div class="page" id="top">
+
+  <header class="band ident">
+    <img src="{{ "/assets/profile_pic_square.jpeg" | relative_url }}" alt="Katie Spoon" width="96" height="96">
+    <div>
+      <h1>Katie Spoon</h1>
+      <p class="what">I study how inequality accumulates across education, careers and health &mdash; at the scale of whole populations.</p>
+      <p class="where">Data Science Fellow and New Map of Life Fellow, Stanford University</p>
+      <p class="short-bio">I work with <a href="https://ed.stanford.edu/faculty/stevens4">Mitchell Stevens</a> and
+        <a href="https://profiles.stanford.edu/david-rehkopf">David Rehkopf</a> at Stanford. I received my PhD in computer
+        science at CU Boulder in 2025, advised by <a href="https://aaronclauset.github.io/">Aaron Clauset</a> and
+        <a href="https://larremorelab.github.io/">Dan Larremore</a> and supported by an <a href="https://nsfgrfp.org/">NSF
+        Graduate Research Fellowship</a>, alongside a Master's in
+        <a href="https://www.colorado.edu/education/academics/graduate-programs/educational-foundations-policy-practice/ma-educational-foundations">education policy</a>.
+        I have been a Data Science Fellow at the <a href="https://www.census.gov/programs-surveys/ehealth.html">U.S. Census
+        Bureau</a> and a graduate research assistant at the National Center for Women &amp; Information Technology. Before the
+        PhD I was a research engineer at IBM Research, and studied computer science at Indiana University, where I built a
+        system to detect dyslexia in children's handwriting. Full history on the <a href="{{ "/cv/" | relative_url }}">CV</a>.</p>
+      <p class="linkrow">
+        <a href="mailto:kspoon@stanford.edu"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-mail"/></svg>Email</a>
+        <a href="https://scholar.google.com/citations?hl=en&amp;user=bHf0QxEAAAAJ"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-scholar"/></svg>Google Scholar</a>
+        <a href="{{ "/cv/" | relative_url }}"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-cv"/></svg>CV</a>
+        <a href="https://bsky.app/profile/kspoon.bsky.social"><svg class="solid" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-bsky"/></svg>Bluesky</a>
+        <a href="https://twitter.com/thekatiespoon"><svg class="solid" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-x"/></svg>X</a>
+      </p>
+    </div>
+  </header>
+
+  <nav class="band pagenav" role="tablist" aria-label="Sections">
+    <button role="tab" id="tab-research" aria-selected="true" aria-controls="view-research" data-tab="research">Research</button>
+    <button role="tab" id="tab-teaching" aria-selected="false" aria-controls="view-teaching" data-tab="teaching">Teaching &amp; Service</button>
+    <a class="cv" href="{{ "/cv/" | relative_url }}"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-cv"/></svg>CV</a>
+  </nav>
+
+  <div class="views">
+  <div class="view" role="tabpanel" id="view-research" aria-labelledby="tab-research">
+
+    <section class="band wide">
+      <div class="sec-head">
+        <h2>Research</h2>
+        <span class="aside">Newest first &middot; <a href="https://scholar.google.com/citations?hl=en&amp;user=bHf0QxEAAAAJ">all papers on Scholar</a></span>
+      </div>
+      <div class="tagbar" id="tagbar" hidden></div>
+      <div class="timeline" id="timeline">
+
+        <section class="era" data-era="health" data-open="true" style="--era:var(--era-health)">
+          <div class="rail" aria-hidden="true"></div>
+          <button class="era-toggle" type="button" aria-expanded="true" aria-controls="p-health">
+            <span class="node" aria-hidden="true"></span>
+            <span class="era-id"><span class="nm">Turning points in health and life trajectories</span>
+              <span class="sub"><span class="yrs">2025 &ndash; now</span> &middot; Stanford</span></span>
+            <span class="era-meta"><span class="dots" aria-hidden="true"></span><span class="ct"></span><span class="chev" aria-hidden="true"></span></span>
+          </button>
+          <div class="era-panel" id="p-health">
+            <p class="era-intro">Life-course research has studied turning points &mdash; events that durably redirect a
+              trajectory &mdash; since at least Elder's work in the 1980s, and has developed a range of ways to identify
+              them. These projects look for turning points at scale in longitudinal records: which diagnoses redirect a
+              patient's disease trajectory in primary care, and which events in early adulthood shift a life trajectory,
+              for whom.</p>
+            <div class="era-figs">
+              <a class="fig" href="{{ "/july3-health-traj.pdf" | relative_url }}" data-tags="social inequalities|computational social science">
+                <span class="canvas"><svg viewBox="0 0 160 100" role="img" aria-label="Key figure"><use href="#f-traj"/></svg></span>
+                <span class="access">slides</span>
+                <span class="meta">
+                  <span class="venue"><span>IAGG World Congress</span><span class="yr">2026</span></span>
+                  <h4>Turning points in primary care disease trajectories</h4>
+                  <span class="takeaway">Which diagnoses redirect a patient's trajectory, recovering known turning points from the records themselves.</span>
+                  <span class="chips"><span class="chip">social inequalities</span><span class="chip">computational social science</span></span>
+                </span>
+              </a>
+              <a class="fig" href="{{ "/july1-life-traj.pdf" | relative_url }}" data-tags="social inequalities|computational social science">
+                <span class="canvas"><svg viewBox="0 0 160 100" role="img" aria-label="Key figure"><use href="#f-traj"/></svg></span>
+                <span class="access">slides</span>
+                <span class="meta">
+                  <span class="venue"><span>SLLS, Brussels</span><span class="yr">2026</span></span>
+                  <h4>Identifying turning points in early adult life</h4>
+                  <span class="takeaway">Which life events persistently bend a young adult's trajectory, and for whom.</span>
+                  <span class="chips"><span class="chip">social inequalities</span><span class="chip">computational social science</span></span>
+                </span>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section class="era" data-era="census" data-open="false" data-concurrent="true" style="--era:var(--era-census)">
+          <div class="rail" aria-hidden="true"></div>
+          <button class="era-toggle" type="button" aria-expanded="true" aria-controls="p-census">
+            <span class="node" aria-hidden="true"></span>
+            <span class="era-id"><span class="nm">Risk of declining access to care</span>
+              <span class="sub"><span class="yrs">2024</span> &middot; U.S. Census Bureau &middot; <span class="conc">concurrent with the PhD</span></span></span>
+            <span class="era-meta"><span class="dots" aria-hidden="true"></span><span class="ct"></span><span class="chev" aria-hidden="true"></span></span>
+          </button>
+          <div class="era-panel" id="p-census">
+            <p class="era-intro">A summer in the Census Bureau's Enhancing Health Data group, developing a community-level
+              measure of the risk that access to healthcare is declining.</p>
+            <div class="era-figs">
+              <a class="fig" href="https://www.census.gov/programs-surveys/ehealth.html" data-tags="social inequalities|computational social science">
+                <span class="canvas"><svg viewBox="0 0 160 100" role="img" aria-label="Key figure"><use href="#f-survey"/></svg></span>
+                <span class="access">talk</span>
+                <span class="meta">
+                  <span class="venue"><span>Coding it Forward</span><span class="yr">2024</span></span>
+                  <h4>Measuring community-level risk of declining healthcare access</h4>
+                  <span class="takeaway">Which communities are closest to losing reach into the health system, and why.</span>
+                  <span class="chips"><span class="chip">social inequalities</span><span class="chip">computational social science</span></span>
+                </span>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section class="era" data-era="careers" data-open="false" style="--era:var(--era-careers)">
+          <div class="rail" aria-hidden="true"></div>
+          <button class="era-toggle" type="button" aria-expanded="true" aria-controls="p-careers">
+            <span class="node" aria-hidden="true"></span>
+            <span class="era-id"><span class="nm">Retention and inequity in academic careers</span>
+              <span class="sub"><span class="yrs">2021 &ndash; 2025</span> &middot; CU Boulder PhD</span></span>
+            <span class="era-meta"><span class="dots" aria-hidden="true"></span><span class="ct"></span><span class="chev" aria-hidden="true"></span></span>
+          </button>
+          <div class="era-panel" id="p-careers">
+            <p class="era-intro">Research on gender in higher education has tracked representation and attrition since the
+              1970s and documented the role of departmental climate. These papers add large-scale evidence from the
+              employment records of nearly every professor at US universities, paired with survey and interview data:
+              women leave faculty positions at higher rates than men at every career stage, tenure included, and faculty
+              who leave more often cite their workplace than anything pulling them elsewhere.</p>
+            <div class="era-figs">
+              <a class="fig" href="https://doi.org/10.1093/pnasnexus/pgag306" data-tags="social inequalities|science of science|DEI" data-press="devaluation">
+                <span class="canvas"><svg viewBox="0 0 160 100" role="img" aria-label="Key figure"><use href="#f-flow"/></svg></span>
+                <span class="access open">open access</span>
+                <span class="meta">
+                  <span class="venue"><span>PNAS Nexus</span><span class="yr">2026</span></span>
+                  <h4>Devaluation underlies gendered US faculty departures</h4>
+                  <span class="takeaway">Pushed out rather than pulled away, across disciplines and institution types.</span>
+                  <span class="chips"><span class="chip">social inequalities</span><span class="chip">science of science</span><span class="chip">DEI</span></span>
+                </span>
+              </a>
+              <a class="fig" href="{{ "/dei_socsci_6-5-26.pdf" | relative_url }}" data-tags="DEI|social inequalities">
+                <span class="canvas"><svg viewBox="0 0 160 100" role="img" aria-label="Key figure"><use href="#f-survey"/></svg></span>
+                <span class="access">slides</span>
+                <span class="meta">
+                  <span class="venue"><span>In preparation</span><span class="yr">2026</span></span>
+                  <h4>The contours of DEI backlash: the case of US faculty</h4>
+                  <span class="takeaway">Who expresses backlash, what form it takes, and what is actually being lashed against.</span>
+                  <span class="chips"><span class="chip">DEI</span><span class="chip">social inequalities</span></span>
+                </span>
+              </a>
+              <a class="fig" href="https://www.science.org/doi/10.1126/sciadv.adi2205" data-tags="social inequalities|science of science|DEI" data-press="retention">
+                <span class="canvas"><svg viewBox="0 0 160 100" role="img" aria-label="Key figure"><use href="#f-survival"/></svg></span>
+                <span class="access open">open access</span>
+                <span class="meta">
+                  <span class="venue"><span>Science Advances</span><span class="yr">2023</span></span>
+                  <h4>Gender and retention patterns among US faculty</h4>
+                  <span class="takeaway">Women leave faculty jobs at higher rates than men at every career stage, tenure included.</span>
+                  <span class="chips"><span class="chip">social inequalities</span><span class="chip">science of science</span><span class="chip">DEI</span></span>
+                </span>
+              </a>
+              <a class="fig" href="https://academic.oup.com/pnasnexus/article/3/6/pgae197/7689238" data-tags="social inequalities|computational social science" data-press="bookbans">
+                <span class="canvas"><svg viewBox="0 0 160 100" role="img" aria-label="Key figure"><use href="#f-map"/></svg></span>
+                <span class="access open">open access</span>
+                <span class="meta">
+                  <span class="venue"><span>PNAS Nexus</span><span class="yr">2024</span></span>
+                  <h4>Book bans in political context</h4>
+                  <span class="takeaway">Bans concentrate where local politics, not local demand, predict them.</span>
+                  <span class="chips"><span class="chip">social inequalities</span><span class="chip">computational social science</span></span>
+                </span>
+              </a>
+              <a class="fig" href="https://scholar.google.com/citations?hl=en&amp;user=bHf0QxEAAAAJ" data-tags="science of science|social inequalities|computational social science">
+                <span class="canvas"><svg viewBox="0 0 160 100" role="img" aria-label="Key figure"><use href="#f-prestige"/></svg></span>
+                <span class="access">in prep</span>
+                <span class="meta">
+                  <span class="venue"><span>In preparation</span><span class="yr">2025</span></span>
+                  <h4>The elite undergraduate backgrounds of US professors</h4>
+                  <span class="takeaway">Where professors did their bachelor's degrees, and how narrow that set is.</span>
+                  <span class="chips"><span class="chip">science of science</span><span class="chip">social inequalities</span><span class="chip">computational social science</span></span>
+                </span>
+              </a>
+              <a class="fig" href="{{ "/cv/" | relative_url }}#publications" data-tags="science of science|social inequalities|computational social science">
+                <span class="canvas"><svg viewBox="0 0 160 100" role="img" aria-label="Key figure"><use href="#f-stack"/></svg></span>
+                <span class="access">thesis</span>
+                <span class="meta">
+                  <span class="venue"><span>Dissertation</span><span class="yr">2025</span></span>
+                  <h4>Quantifying systemic inequities in the professoriate</h4>
+                  <span class="takeaway">Who enters the professoriate, who advances, and who leaves.</span>
+                  <span class="chips"><span class="chip">science of science</span><span class="chip">social inequalities</span><span class="chip">computational social science</span></span>
+                </span>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section class="era" data-era="ibm" data-open="false" style="--era:var(--era-ibm)">
+          <div class="rail" aria-hidden="true"></div>
+          <button class="era-toggle" type="button" aria-expanded="true" aria-controls="p-ibm">
+            <span class="node" aria-hidden="true"></span>
+            <span class="era-id"><span class="nm">Deep neural networks on analog memory</span>
+              <span class="sub"><span class="yrs">2018 &ndash; 2021</span> &middot; IBM Research</span></span>
+            <span class="era-meta"><span class="dots" aria-hidden="true"></span><span class="ct"></span><span class="chev" aria-hidden="true"></span></span>
+          </button>
+          <div class="era-panel" id="p-ibm">
+            <p class="era-intro">Analog, non-volatile memory can perform the matrix multiplications in a neural network
+              directly in hardware, at a cost in precision. This work measured and narrowed that cost for transformer-based
+              models on phase-change memory, largely through noise-aware training.</p>
+            <div class="era-figs">
+              <a class="fig" href="https://www.frontiersin.org/articles/10.3389/fncom.2021.675741/full" data-tags="deep learning">
+                <span class="canvas"><svg viewBox="0 0 160 100" role="img" aria-label="Key figure"><use href="#f-lines"/></svg></span>
+                <span class="access open">open access</span>
+                <span class="meta">
+                  <span class="venue"><span>Frontiers Comp. Neuro.</span><span class="yr">2021</span></span>
+                  <h4>Software-equivalent accuracy on analog transformers</h4>
+                  <span class="takeaway">Transformers can match digital accuracy on analog hardware, given noise-aware training.</span>
+                  <span class="chips"><span class="chip">deep learning</span></span>
+                </span>
+              </a>
+              <a class="fig" href="https://scholar.google.com/citations?hl=en&amp;user=bHf0QxEAAAAJ" data-tags="deep learning">
+                <span class="canvas"><svg viewBox="0 0 160 100" role="img" aria-label="Key figure"><use href="#f-crossbar"/></svg></span>
+                <span class="access">paper</span>
+                <span class="meta">
+                  <span class="venue"><span>IEEE IMW</span><span class="yr">2020</span></span>
+                  <h4>Accelerating DNNs with analog memory devices</h4>
+                  <span class="takeaway">Why a crossbar of phase-change cells can do a matrix multiply in a single step.</span>
+                  <span class="chips"><span class="chip">deep learning</span></span>
+                </span>
+              </a>
+              <a class="fig" href="https://scholar.google.com/citations?hl=en&amp;user=bHf0QxEAAAAJ" data-tags="deep learning">
+                <span class="canvas"><svg viewBox="0 0 160 100" role="img" aria-label="Key figure"><use href="#f-stack"/></svg></span>
+                <span class="access">chapter</span>
+                <span class="meta">
+                  <span class="venue"><span>Book chapter</span><span class="yr">2022</span></span>
+                  <h4>Accelerating DNNs with phase-change memory</h4>
+                  <span class="takeaway">The state of analog accelerators, for people new to the field.</span>
+                  <span class="chips"><span class="chip">deep learning</span></span>
+                </span>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section class="era" data-era="dys" data-open="false" style="--era:var(--era-dys)">
+          <div class="rail" aria-hidden="true"></div>
+          <button class="era-toggle" type="button" aria-expanded="true" aria-controls="p-dys">
+            <span class="node" aria-hidden="true"></span>
+            <span class="era-id"><span class="nm">Detecting dyslexia in handwriting</span>
+              <span class="sub"><span class="yrs">2017 &ndash; 2019</span> &middot; Indiana University</span></span>
+            <span class="era-meta"><span class="dots" aria-hidden="true"></span><span class="ct"></span><span class="chev" aria-hidden="true"></span></span>
+          </button>
+          <div class="era-panel" id="p-dys">
+            <p class="era-intro">Dyslexia affects roughly one in five people in the US, and benefits from early detection,
+              but screening tests are applied inconsistently and classroom teachers are not generally trained to administer
+              them. These two workshop papers contributed handwriting datasets from children with and without dyslexia, a
+              computer-vision classifier intended to run alongside existing screening, and a follow-up examining whether
+              such a system should be used at all.</p>
+            <div class="era-figs">
+              <a class="fig" href="{{ "/dyslexia_neurips_aisg_2019.pdf" | relative_url }}" data-tags="deep learning|social inequalities">
+                <span class="canvas"><svg viewBox="0 0 160 100" role="img" aria-label="Key figure"><use href="#f-script"/></svg></span>
+                <span class="access">pdf</span>
+                <span class="meta">
+                  <span class="venue"><span>NeurIPS &middot; AI for Social Good</span><span class="yr">2019</span></span>
+                  <h4>Can we (and should we) use AI to detect dyslexia?</h4>
+                  <span class="takeaway">Evidence that detection works, and the question of whether it should be deployed.</span>
+                  <span class="chips"><span class="chip">deep learning</span><span class="chip">social inequalities</span></span>
+                </span>
+              </a>
+              <a class="fig" href="{{ "/dyslexia_icml_aisg_2019.pdf" | relative_url }}" data-tags="deep learning|social inequalities">
+                <span class="canvas"><svg viewBox="0 0 160 100" role="img" aria-label="Key figure"><use href="#f-script"/></svg></span>
+                <span class="access">pdf</span>
+                <span class="meta">
+                  <span class="venue"><span>ICML &middot; AI for Social Good</span><span class="yr">2019</span></span>
+                  <h4>Detecting dyslexia in children's handwriting</h4>
+                  <span class="takeaway">Two new handwriting datasets and an automated early screening technique. Best poster award.</span>
+                  <span class="chips"><span class="chip">deep learning</span><span class="chip">social inequalities</span></span>
+                </span>
+              </a>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </section>
+
+    <section class="band">
+      <div class="sec-head"><h2>Press</h2></div>
+      <div class="press-row">
+        <span class="lbl">Coverage</span>
+        <div class="outlets">
+          <a href="https://www.nature.com/articles/d41586-023-03251-8" data-press="retention">Nature News</a>
+          <a href="https://www.chronicle.com/article/even-with-tenure-women-are-more-likely-to-leave-higher-ed" data-press="retention">The Chronicle of Higher Education</a>
+          <a href="https://www.timeshighereducation.com/news/hostile-workplace-climate-pushing-women-out-academia" data-press="retention">Times Higher Education</a>
+          <a href="https://www.science.org/content/article/women-faculty-feel-pushed-academia-poor-workplace-climate" data-press="retention">Science Careers</a>
+          <span class="about">on the faculty retention paper</span>
+        </div>
+      </div>
+      <div class="press-row">
+        <span class="lbl">Writing</span>
+        <div class="outlets">
+          <a href="https://theconversation.com/most-us-book-bans-target-childrens-literature-featuring-diverse-characters-and-authors-of-color-238731">The Conversation</a>
+          <span class="about">op-ed on US book bans</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="band">
+      <div class="sec-head"><h2>Talks</h2><span class="aside">Full record, posters included, on the <a href="{{ "/cv/" | relative_url }}#presentations">CV</a></span></div>
+      <div class="rows" id="talks">
+        <div class="row3"><span class="yr">2026</span><span class="nm">IAGG World Congress of Gerontology and Geriatrics</span><span class="loc">Amsterdam</span></div>
+        <div class="row3"><span class="yr">2026</span><span class="nm">Society for Longitudinal and Life Course Studies</span><span class="loc">Brussels</span></div>
+        <div class="row3"><span class="yr">2026</span><span class="nm">Sociological Science Conference</span><span class="loc">Palo Alto</span></div>
+        <div class="row3"><span class="yr">2026</span><span class="nm">Data-Intensive Research Conference</span><span class="loc">Minneapolis</span></div>
+        <div class="row3"><span class="yr">2025</span><span class="nm">Atlanta Conference on Science &amp; Innovation Policy<a class="slides" href="{{ "/atlc_undergrad.pdf" | relative_url }}">slides</a><a class="slides" href="{{ "/atlc_grants.pdf" | relative_url }}">slides</a></span><span class="loc">Atlanta</span></div>
+        <div class="row3"><span class="yr">2025</span><span class="nm">SCL Futures Project Convening</span><span class="loc">Stanford</span></div>
+        <div class="row3 extra"><span class="yr">2025</span><span class="nm">NCWIT</span><span class="loc">invited</span></div>
+        <div class="row3 extra"><span class="yr">2024</span><span class="nm">Rising Stars in Data Science Workshop</span><span class="loc"></span></div>
+        <div class="row3 extra"><span class="yr">2024</span><span class="nm">Association for the Study of Higher Education</span><span class="loc"></span></div>
+        <div class="row3 extra"><span class="yr">2024</span><span class="nm">CU Academic Leadership Conference</span><span class="loc">Boulder</span></div>
+        <div class="row3 extra"><span class="yr">2024</span><span class="nm">Athena Fellowship for Girls in STEM Panel</span><span class="loc">invited</span></div>
+        <div class="row3 extra"><span class="yr">2024</span><span class="nm">Coding it Forward Public Technology Showcase</span><span class="loc">12 fellows</span></div>
+        <div class="row3 extra"><span class="yr">2024</span><span class="nm">International Conference on the Science of Science &amp; Innovation</span><span class="loc"></span></div>
+        <div class="row3 extra"><span class="yr">2024</span><span class="nm">Kilpatrick Group, CU Applied Mathematics</span><span class="loc">invited</span></div>
+        <div class="row3 extra"><span class="yr">2024</span><span class="nm">Academic Analytics Research Center<a class="slides" href="{{ "/AARC_Feb2024.pdf" | relative_url }}">slides</a></span><span class="loc">invited</span></div>
+        <div class="row3 extra"><span class="yr">2023</span><span class="nm">CU Office of Faculty Affairs</span><span class="loc">invited</span></div>
+        <div class="row3 extra"><span class="yr">2023</span><span class="nm">Atlanta Conference on Science &amp; Innovation Policy<a class="slides" href="{{ "/ATLC23.pdf" | relative_url }}">slides</a></span><span class="loc">Atlanta</span></div>
+        <div class="row3 extra"><span class="yr">2023</span><span class="nm">International Conference on Computational Social Science<a class="slides" href="{{ "/IC2S2_23.pdf" | relative_url }}">slides</a></span><span class="loc"></span></div>
+        <div class="row3 extra"><span class="yr">2022</span><span class="nm">Women in Network Science &amp; Diversify NetSci Satellite</span><span class="loc"></span></div>
+        <div class="row3 extra"><span class="yr">2022</span><span class="nm">International Conference on Computational Social Science</span><span class="loc"></span></div>
+        <div class="row3 extra"><span class="yr">2022</span><span class="nm">International Conference on the Science of Science &amp; Innovation</span><span class="loc"></span></div>
+        <div class="row3 extra"><span class="yr">2020</span><span class="nm">International Memory Workshop</span><span class="loc">invited</span></div>
+        <div class="row3 extra"><span class="yr">2019</span><span class="nm">American Handwriting Analysis Foundation</span><span class="loc">invited</span></div>
+        <div class="row3 extra"><span class="yr">2019</span><span class="nm">Computer Vision for Global Challenges Workshop, CVPR</span><span class="loc"></span></div>
+      </div>
+      <button class="more" type="button" data-more="talks" hidden></button>
+    </section>
+
+    <section class="band">
+      <div class="sec-head"><h2>News</h2></div>
+      <div class="rows" id="news">
+        <div class="item"><span class="when">Fall 2025</span><span class="what">Moved to California and started at Stanford, and attended the Complex Networks Winter Workshop in Quebec. &#127809;</span></div>
+        <div class="item"><span class="when">Summer 2025</span><span class="what">Took a break from work to hike the Colorado Trail. &#127794;</span></div>
+        <div class="item"><span class="when">Spring 2025</span><span class="what">Finished my PhD. &#127891;</span></div>
+        <div class="item"><span class="when">Fall 2024</span><span class="what"><a href="https://theconversation.com/most-us-book-bans-target-childrens-literature-featuring-diverse-characters-and-authors-of-color-238731">New op-ed</a> in <i>The Conversation</i> on US book bans, and started working with the National Center for Women &amp; Information Technology.</span></div>
+        <div class="item extra"><span class="when">Summer 2024</span><span class="what">Started as a Data Science Fellow at the U.S. Census Bureau. <a href="https://academic.oup.com/pnasnexus/article/3/6/pgae197/7689238">New paper</a> in <i>PNAS Nexus</i>.</span></div>
+        <div class="item extra"><span class="when">Spring 2024</span><span class="what">Received an Achievement Reward for College Scientists and an Annual Outstanding Research Paper award from CU Boulder.</span></div>
+        <div class="item extra"><span class="when">Fall 2023</span><span class="what"><a href="https://www.science.org/doi/10.1126/sciadv.adi2205">New paper</a> in <i>Science Advances</i>, featured as <a href="https://www.science.org/doi/10.1126/sciadv.adp7473">an exemplary paper</a> in social and interdisciplinary sciences. Passed my dissertation proposal defense. &#127881;</span></div>
+        <div class="item extra"><span class="when">Summer 2023</span><span class="what">Talks at IC2S2 and the Atlanta Conference on Science &amp; Innovation Policy.</span></div>
+      </div>
+      <button class="more" type="button" data-more="news" hidden></button>
+    </section>
+
+  </div>
+
+  <div class="view" role="tabpanel" id="view-teaching" aria-labelledby="tab-teaching">
+
+    <section class="band">
+      <div class="sec-head"><h2>Teaching</h2></div>
+      <div class="rows">
+        <div class="trow"><span class="role">Fall 2024</span><span class="body"><b>Guest lectures</b>, University of Colorado Boulder<span class="sub">PHIL 2800: Ethical Puzzles and Moral Conflicts</span></span></div>
+        <div class="trow"><span class="role">Fall 2019</span><span class="body"><b>Professional development teaching assistant</b>, IBM Research<span class="sub">Upskilling class on deep learning. Designed and gave mini-lectures; held office hours.</span></span></div>
+        <div class="trow"><span class="role">2018 &ndash; 2019</span><span class="body"><b>Lead graduate assistant instructor</b>, Indiana University<span class="sub">CS C343: Introduction to Data Structures &amp; Algorithms. Designed labs, homework and exams; managed a staff of 12 teaching assistants.</span></span></div>
+        <div class="trow"><span class="role">Spring 2018</span><span class="body"><b>Undergraduate teaching assistant</b>, Indiana University<span class="sub">CS C343: Introduction to Data Structures &amp; Algorithms</span></span></div>
+        <div class="trow"><span class="role">2016 &ndash; 2017</span><span class="body"><b>Undergraduate teaching assistant</b>, Indiana University<span class="sub">CS C241: Discrete Mathematics for Computer Science</span></span></div>
+        <div class="trow"><span class="role">2019</span><span class="body"><b>Graduate Teaching Assistant of the Year</b>, Indiana University<span class="sub">Department award</span></span></div>
+      </div>
+    </section>
+
+    <section class="band">
+      <div class="sec-head"><h2>Research mentoring</h2><span class="aside">4 students, 2 of them coauthors</span></div>
+      <div class="rows">
+        <div class="trow"><span class="role">2022 &ndash; 2023</span><span class="body"><b>Joanna Mendy</b> &mdash; sociology and political science undergraduate, then information science graduate student, CU Boulder<span class="sub">Gendered devaluation underlies faculty retention &mdash; coauthor on the resulting paper</span></span></div>
+        <div class="trow"><span class="role">Summer 2022</span><span class="body"><b>Maria Martinez</b> &mdash; School of Education graduate student, CU Boulder<span class="sub">Gendered devaluation underlies faculty retention &mdash; coauthor on the resulting paper</span></span></div>
+        <div class="trow"><span class="role">Spring 2022</span><span class="body"><b>Swag Das</b> &mdash; computer science undergraduate, CU Boulder<span class="sub">Beliefs about why women leave academia</span></span></div>
+        <div class="trow"><span class="role">Spring 2022</span><span class="body"><b>Jordan Roos</b> &mdash; biomedical engineering undergraduate, CU Boulder<span class="sub">Academic fields with fewer women are more stressful</span></span></div>
+      </div>
+    </section>
+
+    <section class="band">
+      <div class="sec-head"><h2>Service</h2></div>
+      <div class="rows" id="service">
+        <div class="row3"><span class="yr">2024&ndash;25</span><span class="nm">Graduate &amp; Family Housing Resident Council, secretary and treasurer</span><span class="loc">CU Boulder</span></div>
+        <div class="row3"><span class="yr">2020&ndash;25</span><span class="nm">Computer Science PhD application mentor</span><span class="loc">CU Boulder</span></div>
+        <div class="row3"><span class="yr">2022</span><span class="nm">You're @ CU Research Program, graduate student mentor</span><span class="loc">CU Boulder</span></div>
+        <div class="row3"><span class="yr">2021&ndash;22</span><span class="nm">McNair Scholars, graduate student mentor</span><span class="loc">CU Boulder</span></div>
+        <div class="row3"><span class="yr">2020&ndash;22</span><span class="nm">Engineering mentor for underrepresented first-year undergraduates</span><span class="loc">CU Boulder</span></div>
+        <div class="row3"><span class="yr">2016&ndash;19</span><span class="nm">Lead ambassador, Luddy School of Informatics, Computing &amp; Engineering</span><span class="loc">Indiana</span></div>
+        <div class="row3"><span class="yr">2016&ndash;17</span><span class="nm">Software development intern, Serve IT Nonprofit Technology Clinic</span><span class="loc">Indiana</span></div>
+      </div>
+      <p class="reviewing"><span class="lbl">Reviewer for</span>Behaviour Research and Therapy &middot; eLife &middot;
+        The Lancet Regional Health &ndash; Americas &middot; Proceedings of the ACM on Interactive, Mobile, Wearable and
+        Ubiquitous Technologies &middot; Research Policy &middot; Social Policy &amp; Administration</p>
+    </section>
+
+  </div>
+  </div>
+
+  <footer class="band foot">
+    <span class="mail">kspoon@stanford.edu</span>
+    <span>she/her</span>
+    <span class="upd">Updated October 2026</span>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var $  = function(s, r){ return (r || document).querySelector(s); };
+  var $$ = function(s, r){ return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+
+  /* ---- collapsible eras ----
+     Every panel is open in the markup so the page is complete without JS.
+     Collapse all but the first only once we know JS is running. */
+  var eras = $$(".era");
+  eras.forEach(function(era){
+    var btn = $(".era-toggle", era);
+    var panel = $(".era-panel", era);
+    var open = era.dataset.open === "true";
+    panel.hidden = !open;
+    btn.setAttribute("aria-expanded", String(open));
+    btn.addEventListener("click", function(){
+      var next = era.dataset.open !== "true";
+      era.dataset.open = String(next);
+      panel.hidden = !next;
+      btn.setAttribute("aria-expanded", String(next));
+    });
+  });
+
+  /* ---- tag filter, built in JS so no-JS visitors never see dead buttons ---- */
+  var figs = $$(".fig");
+  var tagsOf = function(el){ return (el.dataset.tags || "").split("|").filter(Boolean); };
+  var ALL = [];
+  figs.forEach(function(f){ tagsOf(f).forEach(function(t){ if (ALL.indexOf(t) < 0) ALL.push(t); }); });
+  ALL.sort();
+
+  var active = [];
+  var bar = $("#tagbar");
+  bar.hidden = false;
+  bar.innerHTML = '<span class="fam">Threads</span>'
+    + ALL.map(function(t){ return '<button class="tag" type="button" data-tag="' + t + '" aria-pressed="false">' + t + '</button>'; }).join("")
+    + '<button class="tag clear" type="button" data-clear="1" hidden>clear</button>';
+
+  function shown(f){
+    if (!active.length) return true;
+    var t = tagsOf(f);
+    return active.every(function(a){ return t.indexOf(a) >= 0; });
+  }
+
+  function paint(){
+    $$(".tag", bar).forEach(function(b){
+      if (b.dataset.clear) { b.hidden = !active.length; return; }
+      b.setAttribute("aria-pressed", String(active.indexOf(b.dataset.tag) >= 0));
+    });
+
+    eras.forEach(function(era){
+      var all = $$(".fig", era);
+      var live = all.filter(shown);
+      all.forEach(function(f){ f.hidden = !shown(f); });
+
+      era.classList.toggle("dim", active.length > 0 && live.length === 0);
+      $(".ct", era).textContent = active.length
+        ? live.length + " of " + all.length
+        : all.length + (all.length === 1 ? " item" : " items");
+      $(".dots", era).innerHTML = all.map(function(f){
+        return '<i class="' + (shown(f) ? "on" : "") + '"></i>';
+      }).join("");
+
+      var panel = $(".era-panel", era);
+      var want = active.length ? live.length > 0 : era.dataset.open === "true";
+      panel.hidden = !want;
+      era.dataset.open = String(want);
+      $(".era-toggle", era).setAttribute("aria-expanded", String(want));
+
+      var empty = $(".era-empty", era);
+      if (active.length && !live.length){
+        if (!empty){
+          empty = document.createElement("p");
+          empty.className = "era-empty";
+          empty.textContent = "Nothing in this era matches those threads.";
+          panel.appendChild(empty);
+        }
+      } else if (empty) { empty.remove(); }
+
+      $$(".chip", era).forEach(function(c){
+        c.classList.toggle("hit", active.indexOf(c.textContent.trim()) >= 0);
+      });
+    });
+
+    /* press outlets fade when the paper they cover is filtered out */
+    var live = {};
+    figs.filter(shown).forEach(function(f){ if (f.dataset.press) live[f.dataset.press] = 1; });
+    $$(".outlets a[data-press]").forEach(function(a){
+      a.classList.toggle("dim", active.length > 0 && !live[a.dataset.press]);
+    });
+  }
+
+  bar.addEventListener("click", function(ev){
+    var b = ev.target.closest(".tag");
+    if (!b) return;
+    if (b.dataset.clear) active = [];
+    else {
+      var i = active.indexOf(b.dataset.tag);
+      if (i >= 0) active.splice(i, 1); else active.push(b.dataset.tag);
+    }
+    paint();
+  });
+  paint();
+
+  /* ---- show more / fewer ---- */
+  $$("[data-more]").forEach(function(btn){
+    var list = $("#" + btn.dataset.more);
+    var extra = $$(".extra", list);
+    if (!extra.length) return;
+    var open = false;
+    btn.hidden = false;
+    function sync(){
+      extra.forEach(function(el){ el.hidden = !open; });
+      btn.textContent = open ? "Show fewer"
+        : "Show all " + $$("." + (extra[0].className.split(" ")[0]), list).length + " →";
+    }
+    sync();
+    btn.addEventListener("click", function(){ open = !open; sync(); });
+  });
+
+  /* ---- tabs ---- */
+  var TABS = ["research", "teaching"];
+  var cur = "research";
+  function showTab(name, push){
+    if (TABS.indexOf(name) < 0 || name === cur) return;
+    var forward = TABS.indexOf(name) > TABS.indexOf(cur);
+    var incoming = $("#view-" + name), outgoing = $("#view-" + cur);
+    outgoing.hidden = true;
+    incoming.hidden = false;
+    incoming.classList.add(forward ? "enter-right" : "enter-left");
+    requestAnimationFrame(function(){
+      requestAnimationFrame(function(){ incoming.classList.remove("enter-right", "enter-left"); });
+    });
+    $$(".pagenav [role=tab]").forEach(function(b){
+      b.setAttribute("aria-selected", String(b.dataset.tab === name));
+    });
+    cur = name;
+    if (push && history.replaceState) history.replaceState(null, "", "#" + name);
+  }
+  $("#view-teaching").hidden = true;
+  var nav = $(".pagenav");
+  nav.addEventListener("click", function(ev){
+    var b = ev.target.closest("[role=tab]");
+    if (b) showTab(b.dataset.tab, true);
+  });
+  nav.addEventListener("keydown", function(ev){
+    if (ev.key !== "ArrowRight" && ev.key !== "ArrowLeft") return;
+    var i = TABS.indexOf(cur);
+    var next = TABS[(i + (ev.key === "ArrowRight" ? 1 : TABS.length - 1)) % TABS.length];
+    showTab(next, true);
+    $("#tab-" + next).focus();
+  });
+  if (TABS.indexOf(location.hash.slice(1)) >= 0) showTab(location.hash.slice(1), false);
+
+  /* ---- condensed bar appears once the identity band scrolls away ---- */
+  var stuck = $("#stuck"), ident = $(".ident");
+  if (window.IntersectionObserver && ident){
+    new IntersectionObserver(function(e){
+      stuck.classList.toggle("on", !e[0].isIntersecting);
+    }, { rootMargin: "-56px 0px 0px 0px", threshold: 0 }).observe(ident);
+  }
+})();
+</script>
+</body>
+</html>
