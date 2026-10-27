@@ -76,8 +76,11 @@ h1,h2,h3{margin:0;text-wrap:balance}
 .jump a:hover{color:var(--teal)}
 
 /* ---- sections ---- */
-.sec{margin-bottom:26px}
-.sec > h2{font-size:21px;font-weight:700;color:var(--teal);margin-bottom:7px;scroll-margin-top:62px}
+/* The jump-nav anchors are the section ids, so the scroll offset belongs here, not on the
+   heading — otherwise the heading lands underneath the sticky toolbar and the jump looks
+   like it skipped to the first entry. */
+.sec{margin-bottom:26px;scroll-margin-top:68px}
+.sec > h2{font-size:21px;font-weight:700;color:var(--teal);margin-bottom:7px}
 .sec h3{font-size:15px;font-weight:700;color:var(--teal-soft);margin:16px 0 5px}
 .entry{margin-bottom:3px;break-inside:avoid}
 .line{display:flex;gap:0 18px;align-items:baseline}
@@ -110,9 +113,13 @@ b,strong{font-weight:700}
 .venue{font-style:italic}
 .pubnote{color:var(--teal-soft);font-size:13.5px;padding-left:0}
 .legend{font-size:13px;color:var(--ink-soft);margin-bottom:10px}
+/* On screen the Paper/Slides links sit in their own column just left of the date, so they
+   form a scannable strip instead of hiding at the end of each title. Print drops the whole
+   column — a printed link is not clickable, and the citation below already names the venue. */
+.line .linkcol{flex:0 0 auto;display:flex;gap:4px;justify-content:flex-end;min-width:62px;margin-right:14px}
 .tag-link{font-size:12.5px;text-decoration:none;border:1px solid var(--rule);border-radius:2px;
-  padding:1px 6px;margin-left:6px;white-space:nowrap;color:var(--teal)}
-.tag-link:hover{border-color:var(--teal)}
+  padding:1px 6px;white-space:nowrap;color:var(--teal)}
+.tag-link:hover{border-color:var(--teal);background:color-mix(in srgb,var(--teal) 8%,transparent)}
 
 /* presentations are grouped by project */
 .proj{font-weight:700;margin:14px 0 3px}
@@ -152,6 +159,7 @@ mark{background:var(--mark);color:inherit;padding:0 1px;border-radius:2px}
   .pubs .entry{margin-bottom:5pt}
   .sub{font-size:9.6pt}
   .line .date{font-size:1em;color:#000}
+  .line .linkcol{display:none}
   .tag-link{display:none}
   mark{background:none}
   a{color:#217394;text-decoration:none}
@@ -300,24 +308,20 @@ mark{background:var(--mark);color:inherit;padding:0 1px;border-radius:2px}
 
     <h3>Peer-Reviewed Journal Articles</h3>
     <div class="entry">
-      <div class="line"><span class="lead">Devaluation underlies gendered U.S. faculty departures across disciplines and institutions
-        <a class="tag-link" href="https://doi.org/10.1093/pnasnexus/pgag306">Paper</a></span><span class="date">2026</span></div>
+      <div class="line"><span class="lead">Devaluation underlies gendered U.S. faculty departures across disciplines and institutions</span><span class="linkcol"><a class="tag-link" href="https://doi.org/10.1093/pnasnexus/pgag306">Paper</a></span><span class="date">2026</span></div>
       <div class="sub authors"><span class="me">K. Spoon</span>, &deg;J. Mendy, &deg;M. Martinez, M. Galesic, D. B. Larremore, A. Clauset, L. A. Rivera. <span class="venue">PNAS Nexus</span>.</div>
     </div>
     <div class="entry">
-      <div class="line"><span class="lead">Book bans in political context: Evidence from U.S. public schools
-        <a class="tag-link" href="https://academic.oup.com/pnasnexus/article/3/6/pgae197/7689238">Paper</a></span><span class="date">2024</span></div>
+      <div class="line"><span class="lead">Book bans in political context: Evidence from U.S. public schools</span><span class="linkcol"><a class="tag-link" href="https://academic.oup.com/pnasnexus/article/3/6/pgae197/7689238">Paper</a></span><span class="date">2024</span></div>
       <div class="sub authors">&dagger; *M. S. O. Goncalves, *I. Langrock, *J. LaViolette, *<span class="me">K. Spoon</span>. <span class="venue">PNAS Nexus</span>.</div>
     </div>
     <div class="entry">
-      <div class="line"><span class="lead">Gender and retention patterns among U.S. faculty
-        <a class="tag-link" href="https://www.science.org/doi/10.1126/sciadv.adi2205">Paper</a></span><span class="date">2023</span></div>
+      <div class="line"><span class="lead">Gender and retention patterns among U.S. faculty</span><span class="linkcol"><a class="tag-link" href="https://www.science.org/doi/10.1126/sciadv.adi2205">Paper</a></span><span class="date">2023</span></div>
       <div class="sub authors"><span class="me">K. Spoon</span>, N. LaBerge, K. H. Wapman, S. Zhang, A. C. Morgan, M. Galesic, B. K. Fosdick, D. B. Larremore, and A. Clauset. <span class="venue">Science Advances</span>.</div>
       <div class="sub pubnote">Annual Outstanding Research Paper, 2024 &middot; Bell Family Endowed Computer Science Award, 2024 &middot; Publication Recognition Award, 2023</div>
     </div>
     <div class="entry">
-      <div class="line"><span class="lead">Towards software-equivalent accuracy on transformer-based deep neural networks with analog memory devices
-        <a class="tag-link" href="https://www.frontiersin.org/articles/10.3389/fncom.2021.675741/full">Paper</a></span><span class="date">2021</span></div>
+      <div class="line"><span class="lead">Towards software-equivalent accuracy on transformer-based deep neural networks with analog memory devices</span><span class="linkcol"><a class="tag-link" href="https://www.frontiersin.org/articles/10.3389/fncom.2021.675741/full">Paper</a></span><span class="date">2021</span></div>
       <div class="sub authors"><span class="me">K. Spoon</span>, H. Tsai, A. Chen, M. J. Rasch, S. Ambrogio, C. Mackin, A. Fasoli, A. Friz, P. Narayanan, M. Stanisavljevic, and G. W. Burr. <span class="venue">Frontiers in Computational Neuroscience</span>.</div>
     </div>
     <div class="entry">
@@ -354,13 +358,11 @@ mark{background:var(--mark);color:inherit;padding:0 1px;border-radius:2px}
       <div class="sub authors"><span class="me">K. Spoon</span>, S. Ambrogio, P. Narayanan, H. Tsai, C. Mackin, A. Chen, A. Fasoli, A. Friz, and G. W. Burr. <span class="venue">International Memory Workshop</span>.</div>
     </div>
     <div class="entry">
-      <div class="line"><span class="lead">Can we (and should we) use AI to detect dyslexia in children&rsquo;s handwriting?
-        <a class="tag-link" href="{{ '/dyslexia_neurips_aisg_2019.pdf' | relative_url }}">Paper</a></span><span class="date">2019</span></div>
+      <div class="line"><span class="lead">Can we (and should we) use AI to detect dyslexia in children&rsquo;s handwriting?</span><span class="linkcol"><a class="tag-link" href="{{ '/dyslexia_neurips_aisg_2019.pdf' | relative_url }}">Paper</a></span><span class="date">2019</span></div>
       <div class="sub authors"><span class="me">K. Spoon</span>, D. Crandall, K. Siek, and M. Fillmore. <span class="venue">AI for Social Good Workshop, NeurIPS</span>.</div>
     </div>
     <div class="entry">
-      <div class="line"><span class="lead">Towards detecting dyslexia in children&rsquo;s handwriting using neural networks
-        <a class="tag-link" href="{{ '/dyslexia_icml_aisg_2019.pdf' | relative_url }}">Paper</a></span><span class="date">2019</span></div>
+      <div class="line"><span class="lead">Towards detecting dyslexia in children&rsquo;s handwriting using neural networks</span><span class="linkcol"><a class="tag-link" href="{{ '/dyslexia_icml_aisg_2019.pdf' | relative_url }}">Paper</a></span><span class="date">2019</span></div>
       <div class="sub authors"><span class="me">K. Spoon</span>, D. Crandall, and K. Siek. <span class="venue">AI for Social Good Workshop, International Conference on Machine Learning (ICML)</span>.</div>
       <div class="sub pubnote">Best poster award</div>
     </div>
@@ -373,8 +375,7 @@ mark{background:var(--mark);color:inherit;padding:0 1px;border-radius:2px}
 
     <h3>Essays and Perspectives</h3>
     <div class="entry">
-      <div class="line"><span class="lead">Most US book bans target children&rsquo;s literature featuring diverse characters and authors of color
-        <a class="tag-link" href="https://theconversation.com/most-us-book-bans-target-childrens-literature-featuring-diverse-characters-and-authors-of-color-238731">Op-ed</a></span><span class="date">2024</span></div>
+      <div class="line"><span class="lead">Most US book bans target children&rsquo;s literature featuring diverse characters and authors of color</span><span class="linkcol"><a class="tag-link" href="https://theconversation.com/most-us-book-bans-target-childrens-literature-featuring-diverse-characters-and-authors-of-color-238731">Op-ed</a></span><span class="date">2024</span></div>
       <div class="sub authors"><span class="me">K. Spoon</span>. <span class="venue">The Conversation</span>.</div>
     </div>
     <div class="entry">
@@ -427,8 +428,7 @@ mark{background:var(--mark);color:inherit;padding:0 1px;border-radius:2px}
     <div class="entry"><div class="line"><span class="lead">International Conference on the Science of Science &amp; Innovation, Talk</span><span class="date">July 2024</span></div></div>
     <div class="entry"><div class="line"><span class="lead">Kilpatrick Group, University of Colorado Boulder Applied Mathematics, Invited Talk</span><span class="date">Apr 2024</span></div></div>
     <div class="entry">
-      <div class="line"><span class="lead">Academic Analytics Research Center, Invited Talk
-        <a class="tag-link" href="{{ '/AARC_Feb2024.pdf' | relative_url }}">Slides</a></span><span class="date">Feb 2024</span></div>
+      <div class="line"><span class="lead">Academic Analytics Research Center, Invited Talk</span><span class="linkcol"><a class="tag-link" href="{{ '/AARC_Feb2024.pdf' | relative_url }}">Slides</a></span><span class="date">Feb 2024</span></div>
     </div>
     <div class="entry">
       <div class="line"><span class="lead">University of Colorado Boulder Computer Science Research Expo, Poster</span><span class="date">Feb 2024</span></div>
@@ -436,12 +436,10 @@ mark{background:var(--mark);color:inherit;padding:0 1px;border-radius:2px}
     </div>
     <div class="entry"><div class="line"><span class="lead">University of Colorado Boulder Office of Faculty Affairs, Invited Talk</span><span class="date">Dec 2023</span></div></div>
     <div class="entry">
-      <div class="line"><span class="lead">International Conference on Computational Social Science, Poster
-        <a class="tag-link" href="{{ '/IC2S2_23.pdf' | relative_url }}">Slides</a></span><span class="date">July 2023</span></div>
+      <div class="line"><span class="lead">International Conference on Computational Social Science, Poster</span><span class="linkcol"><a class="tag-link" href="{{ '/IC2S2_23.pdf' | relative_url }}">Slides</a></span><span class="date">July 2023</span></div>
     </div>
     <div class="entry">
-      <div class="line"><span class="lead">Atlanta Conference on Science &amp; Innovation Policy, Talk
-        <a class="tag-link" href="{{ '/ATLC23.pdf' | relative_url }}">Slides</a></span><span class="date">May 2023</span></div>
+      <div class="line"><span class="lead">Atlanta Conference on Science &amp; Innovation Policy, Talk</span><span class="linkcol"><a class="tag-link" href="{{ '/ATLC23.pdf' | relative_url }}">Slides</a></span><span class="date">May 2023</span></div>
     </div>
     <div class="entry"><div class="line"><span class="lead">Women in Network Science &amp; Diversify NetSci Satellite, Talk</span><span class="date">July 2022</span></div></div>
     <div class="entry"><div class="line"><span class="lead">International Conference on Computational Social Science, Talk</span><span class="date">July 2022</span></div></div>
@@ -449,12 +447,10 @@ mark{background:var(--mark);color:inherit;padding:0 1px;border-radius:2px}
 
     <p class="proj">Science and innovation policy</p>
     <div class="entry">
-      <div class="line"><span class="lead">Atlanta Conference on Science &amp; Innovation Policy, undergraduate session
-        <a class="tag-link" href="{{ '/atlc_undergrad.pdf' | relative_url }}">Slides</a></span><span class="date">2025</span></div>
+      <div class="line"><span class="lead">Atlanta Conference on Science &amp; Innovation Policy, undergraduate session</span><span class="linkcol"><a class="tag-link" href="{{ '/atlc_undergrad.pdf' | relative_url }}">Slides</a></span><span class="date">2025</span></div>
     </div>
     <div class="entry">
-      <div class="line"><span class="lead">Atlanta Conference on Science &amp; Innovation Policy, grants session
-        <a class="tag-link" href="{{ '/atlc_grants.pdf' | relative_url }}">Slides</a></span><span class="date">2025</span></div>
+      <div class="line"><span class="lead">Atlanta Conference on Science &amp; Innovation Policy, grants session</span><span class="linkcol"><a class="tag-link" href="{{ '/atlc_grants.pdf' | relative_url }}">Slides</a></span><span class="date">2025</span></div>
     </div>
 
     <p class="proj">Measuring community-level risk of declining healthcare access</p>
@@ -479,8 +475,7 @@ mark{background:var(--mark);color:inherit;padding:0 1px;border-radius:2px}
     <div class="entry"><div class="line"><span class="lead">American Handwriting Analysis Foundation, Invited Talk</span><span class="date">Nov 2019</span></div></div>
     <div class="entry"><div class="line"><span class="lead">AI for Social Good Workshop, NeurIPS, Poster</span><span class="date">Dec 2019</span></div></div>
     <div class="entry">
-      <div class="line"><span class="lead">AI for Social Good Workshop, ICML, Poster
-        <a class="tag-link" href="{{ '/dyslexia_icml_aisg_2019_poster.pdf' | relative_url }}">Poster</a></span><span class="date">June 2019</span></div>
+      <div class="line"><span class="lead">AI for Social Good Workshop, ICML, Poster</span><span class="linkcol"><a class="tag-link" href="{{ '/dyslexia_icml_aisg_2019_poster.pdf' | relative_url }}">Poster</a></span><span class="date">June 2019</span></div>
       <div class="sub pubnote">Best poster award</div>
     </div>
     <div class="entry"><div class="line"><span class="lead">AI for Social Good Workshop, ICML, Talk</span><span class="date">June 2019</span></div></div>
