@@ -1,0 +1,14 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "jekyll",
+      "runtimeExecutable": "/bin/sh",
+      "runtimeArgs": [
+        "-c",
+        "cd /Users/kspoon/Documents/project_management/website/katiespoon.github.io && exec /Users/kspoon/.gem/ruby/2.6.0/bin/bundle exec jekyll serve --port 4000 --host 127.0.0.1"
+      ],
+      "port": 4000
+    }
+  ]
+}
