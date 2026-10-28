@@ -1,0 +1,35 @@
+---
+permalink: /about/
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Katie Spoon</title>
+<!-- /about/ held Minima's boilerplate and returned 200, so it may be indexed or linked
+     from elsewhere. Rather than 404, it points at the home page, which now carries the bio.
+     The canonical tag consolidates the two for search engines. -->
+<!-- absolute_url would resolve to localhost or a bare "/" because _config.yml sets url: "" -->
+<link rel="canonical" href="https://katiespoon.github.io/">
+<meta http-equiv="refresh" content="0; url={{ "/" | relative_url }}">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&display=swap">
+<style>
+  :root{color-scheme:light}
+  @media (prefers-color-scheme:dark){:root{color-scheme:dark}}
+  html,body{margin:0;height:100%}
+  body{background:#fff;color:#15181e;display:grid;place-items:center;
+    font-family:"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+    font-size:16.5px;line-height:1.6;padding:24px;text-align:center}
+  @media (prefers-color-scheme:dark){body{background:#111318;color:#e9ebef}}
+  a{color:#217394;text-decoration:none;border-bottom:1px solid rgba(33,115,148,.35)}
+  a:hover{border-bottom-color:#217394}
+  @media (prefers-color-scheme:dark){a{color:#6fb4d0;border-bottom-color:rgba(111,180,208,.35)}}
+  p{margin:0}
+</style>
+</head>
+<body>
+  <p>This page has moved &mdash; find me at <a href="{{ "/" | relative_url }}">katiespoon.github.io</a>.</p>
+  <script>location.replace({{ "/" | relative_url | jsonify }});</script>
+</body>
+</html>
